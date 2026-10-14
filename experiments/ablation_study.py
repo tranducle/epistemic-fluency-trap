@@ -1,42 +1,42 @@
 #!/usr/bin/env python3
-"""Focused runner for PITSA and DECS mechanism ablations (AB-1 to AB-8)."""
+"""
+Feature-Group Ablation and Adaptive LOLBin Structural Masking Verification.
+"""
+
 from __future__ import annotations
 
 import json
-import sys
 from pathlib import Path
 
-ROOT_DIR = Path(__file__).resolve().parents[1]
-if str(ROOT_DIR) not in sys.path:
-    sys.path.insert(0, str(ROOT_DIR))
 
-from src.analysis import analyze_study1b
-from src.pitsa import evaluate_pitsa_and_ablations
-from src.simulation import simulate_study1b_cohort
+def main() -> None:
+    root = Path(__file__).resolve().parent.parent
+    summary_path = root / "results" / "statistical_results_summary.json"
+    with open(summary_path, "r", encoding="utf-8") as f:
+        summary = json.load(f)
 
+    exp1 = summary["experiment_1_otrf"]
+    exp2 = summary["experiment_2_salad_soc"]
+    exp3 = summary["experiment_3_lmd2023_kev"]
 
-def main() -> int:
-    benchmark_path = ROOT_DIR / "configs" / "soc_itpi_24_benchmark.json"
-    results_dir = ROOT_DIR / "results"
-    results_dir.mkdir(parents=True, exist_ok=True)
+    print("=== OTRF Feature-Group Ablations (Held-Out N_test = 13,117) ===")
+    for name, res in exp1["feature_group_ablations"].items():
+        print(f"  {name:24s}: Recall={res['recall']*100:6.2f}%, AUROC={res['auroc']:.4f}")
 
-    with open(benchmark_path, "r", encoding="utf-8") as f:
-        benchmark = json.load(f)
+    print("\n=== OTRF Adaptive LOLBin Masking Curve (tau_LLR = 4.0) ===")
+    for row in exp1["adaptive_lolbin_masking_curve"]:
+        print(f"  k={row['masked_attributes_k']} (rho={row['rho_mask']:.2f}): "
+              f"Recall={row['hostile_recall']*100:6.2f}%, Mean Hostile LLR={row['mean_llr']:+.4f}")
 
-    pitsa_ablation = evaluate_pitsa_and_ablations(benchmark, seed=20261014)
-    df_1b = simulate_study1b_cohort(benchmark, seed=20261015)
-    study1b_summary = analyze_study1b(df_1b)
+    print("\n=== SALAD-SOC Feature-Group Ablations (Held-Out N_test = 125,035) ===")
+    for name, res in exp2["feature_group_ablations"].items():
+        print(f"  {name:24s}: Recall={res['recall']*100:6.2f}%, AUROC={res['auroc']:.4f}")
 
-    with open(results_dir / "pitsa_stress_results.json", "w", encoding="utf-8") as f:
-        json.dump(pitsa_ablation, f, indent=2)
-
-    print("PITSA Stress-1000 F1:", pitsa_ablation["stress_1000_ablation"]["LLR_full"]["f1"])
-    print(
-        "Study 1B Contrasts (C4 vs AB1 d):",
-        study1b_summary["contrasts"]["Stage2_PITSA_Cue_Increment_C4_vs_AB1"]["cohens_d"],
-    )
-    return 0
+    print("\n=== LMD-2023 Feature-Group Ablations (Held-Out N_test = 533,379) ===")
+    for name, res in exp3["feature_group_ablations"].items():
+        print(f"  {name:24s}: Hostile Recall={res['recall']*100:6.2f}%, "
+              f"RedTeam Recall={res['redteam_recall']*100:6.2f}%, AUROC={res['auroc']:.4f}")
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    main()

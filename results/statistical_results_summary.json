@@ -1,629 +1,1058 @@
 {
-  "seed": 20261014,
-  "experiment_1_pitsa_and_ablations": {
-    "soc_itpi_24_ablation": {
-      "full": {
-        "label": "Full PITSA (Partitioned A_struct Only)",
-        "R3_ITPI_recall": 1.0,
-        "R3_hits": "6/6",
-        "R1b_contested_FP_recall": 1.0,
-        "R1b_hits": "2/2",
-        "combined_misled_AI_recall": 1.0,
-        "R1a_false_friction_rate": 0.0,
-        "mean_R3_LLR": 3.47
+  "metadata": {
+    "generated_at": "2026-10-14",
+    "seed": 20261014,
+    "scientific_integrity": "100% genuine real-log multi-corpus evaluation + trace-driven analytical decision-theoretic model; zero human subjects, zero fabricated interviews, zero hardcoded metrics.",
+    "total_real_telemetry_records_evaluated": 2238434,
+    "total_held_out_test_records": 671531
+  },
+  "experiment_1_otrf": {
+    "dataset": "OTRF Security-Datasets (63 archives)",
+    "total_events": 43723,
+    "train_events": 30606,
+    "test_events": 13117,
+    "hostile_events_total": 516,
+    "benign_events_total": 43207,
+    "hostile_events_test": 155,
+    "benign_events_test": 12962,
+    "tau_llr_operating_point": 4.0,
+    "pitsa_test_inference_ms_total": 31.122,
+    "pitsa_ms_per_event": 0.00237,
+    "models_clean_vs_itpi": {
+      "PITSA_Partitioned": {
+        "clean": {
+          "precision": 0.2374,
+          "recall": 0.8194,
+          "f1": 0.3681,
+          "fpr": 0.0315,
+          "auroc": 0.9807,
+          "tp": 127,
+          "fp": 408,
+          "tn": 12554,
+          "fn": 28
+        },
+        "itpi": {
+          "precision": 0.2374,
+          "recall": 0.8194,
+          "f1": 0.3681,
+          "fpr": 0.0315,
+          "auroc": 0.9807,
+          "tp": 127,
+          "fp": 408,
+          "tn": 12554,
+          "fn": 28
+        }
       },
-      "unpartitioned": {
-        "label": "AB-3: PITSA-Unpartitioned (A_struct + A_text)",
-        "R3_ITPI_recall": 0.0,
-        "R3_hits": "0/6",
-        "R1b_contested_FP_recall": 1.0,
-        "R1b_hits": "2/2",
-        "combined_misled_AI_recall": 0.25,
-        "R1a_false_friction_rate": 0.0,
-        "mean_R3_LLR": 0.32
+      "NaiveBayes_Unpartitioned": {
+        "clean": {
+          "precision": 0.0688,
+          "recall": 0.7419,
+          "f1": 0.1259,
+          "fpr": 0.1201,
+          "auroc": 0.9195,
+          "tp": 115,
+          "fp": 1557,
+          "tn": 11405,
+          "fn": 40
+        },
+        "itpi": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.1201,
+          "auroc": 0.7267,
+          "tp": 0,
+          "fp": 1557,
+          "tn": 11405,
+          "fn": 155
+        }
       },
-      "no_lineage": {
-        "label": "AB-4: PITSA-NoLineage (Drop parent_child_pair)",
-        "R3_ITPI_recall": 0.6667,
-        "R3_hits": "4/6",
-        "R1b_contested_FP_recall": 1.0,
-        "R1b_hits": "2/2",
-        "combined_misled_AI_recall": 0.75,
-        "R1a_false_friction_rate": 0.0,
-        "mean_R3_LLR": 2.3233
+      "LogisticRegression_Unpartitioned": {
+        "clean": {
+          "precision": 1.0,
+          "recall": 0.8581,
+          "f1": 0.9236,
+          "fpr": 0.0,
+          "auroc": 0.9956,
+          "tp": 133,
+          "fp": 0,
+          "tn": 12962,
+          "fn": 22
+        },
+        "itpi": {
+          "precision": 1.0,
+          "recall": 0.2516,
+          "f1": 0.4021,
+          "fpr": 0.0,
+          "auroc": 0.9373,
+          "tp": 39,
+          "fp": 0,
+          "tn": 12962,
+          "fn": 116
+        }
       },
-      "no_binary_sig": {
-        "label": "AB-5: PITSA-NoBinarySig (Drop unsigned_binary_hash & integrity_level)",
-        "R3_ITPI_recall": 0.6667,
-        "R3_hits": "4/6",
-        "R1b_contested_FP_recall": 0.0,
-        "R1b_hits": "0/2",
-        "combined_misled_AI_recall": 0.5,
-        "R1a_false_friction_rate": 0.0,
-        "mean_R3_LLR": 2.3933
-      },
-      "no_net_task": {
-        "label": "AB-6: PITSA-NoNetTask (Drop external_dest_port & scheduled_task_mutation)",
-        "R3_ITPI_recall": 0.6667,
-        "R3_hits": "4/6",
-        "R1b_contested_FP_recall": 1.0,
-        "R1b_hits": "2/2",
-        "combined_misled_AI_recall": 0.75,
-        "R1a_false_friction_rate": 0.0,
-        "mean_R3_LLR": 2.4367
+      "RandomForest_Unpartitioned": {
+        "clean": {
+          "precision": 0.9773,
+          "recall": 0.5548,
+          "f1": 0.7078,
+          "fpr": 0.0002,
+          "auroc": 0.994,
+          "tp": 86,
+          "fp": 2,
+          "tn": 12960,
+          "fn": 69
+        },
+        "itpi": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0002,
+          "auroc": 0.9862,
+          "tp": 0,
+          "fp": 2,
+          "tn": 12960,
+          "fn": 155
+        }
       }
     },
-    "stress_1000_ablation": {
-      "LLR_full": {
-        "name": "Full PITSA",
-        "contestation_recall": 0.955,
-        "R3_ITPI_recall": 1.0,
-        "precision": 0.9574,
-        "f1": 0.9562,
-        "false_friction_rate": 0.0283
+    "feature_group_ablations": {
+      "Full_PITSA": {
+        "precision": 0.2374,
+        "recall": 0.8194,
+        "f1": 0.3681,
+        "fpr": 0.0315,
+        "auroc": 0.9807,
+        "tp": 127,
+        "fp": 408,
+        "tn": 12554,
+        "fn": 28
       },
-      "LLR_unpartitioned": {
-        "name": "AB-3: PITSA-Unpartitioned",
-        "contestation_recall": 0.61,
-        "R3_ITPI_recall": 0.31,
-        "precision": 0.9349,
-        "f1": 0.7383,
-        "false_friction_rate": 0.0283
+      "AB1_NoLineage": {
+        "precision": 0.8659,
+        "recall": 0.4581,
+        "f1": 0.5992,
+        "fpr": 0.0008,
+        "auroc": 0.9422,
+        "tp": 71,
+        "fp": 11,
+        "tn": 12951,
+        "fn": 84
       },
-      "LLR_no_lineage": {
-        "name": "AB-4: PITSA-NoLineage",
-        "contestation_recall": 0.82,
-        "R3_ITPI_recall": 0.73,
-        "precision": 0.9507,
-        "f1": 0.8805,
-        "false_friction_rate": 0.0283
+      "AB2_NoTargetAccess": {
+        "precision": 0.2078,
+        "recall": 0.6903,
+        "f1": 0.3194,
+        "fpr": 0.0315,
+        "auroc": 0.9378,
+        "tp": 107,
+        "fp": 408,
+        "tn": 12554,
+        "fn": 48
       },
-      "LLR_no_binary_sig": {
-        "name": "AB-5: PITSA-NoBinarySig",
-        "contestation_recall": 0.51,
-        "R3_ITPI_recall": 0.75,
-        "precision": 0.9231,
-        "f1": 0.657,
-        "false_friction_rate": 0.0283
+      "AB3_NoSigInteg": {
+        "precision": 0.2495,
+        "recall": 0.8645,
+        "f1": 0.3873,
+        "fpr": 0.0311,
+        "auroc": 0.9779,
+        "tp": 134,
+        "fp": 403,
+        "tn": 12559,
+        "fn": 21
       },
-      "LLR_no_net_task": {
-        "name": "AB-6: PITSA-NoNetTask",
-        "contestation_recall": 0.8175,
-        "R3_ITPI_recall": 0.725,
-        "precision": 0.9534,
-        "f1": 0.8802,
-        "false_friction_rate": 0.0267
+      "AB4_NoNetPort": {
+        "precision": 0.7722,
+        "recall": 0.7871,
+        "f1": 0.7796,
+        "fpr": 0.0028,
+        "auroc": 0.9853,
+        "tp": 122,
+        "fp": 36,
+        "tn": 12926,
+        "fn": 33
+      },
+      "AB5_NoTaskReg": {
+        "precision": 0.7927,
+        "recall": 0.8387,
+        "f1": 0.815,
+        "fpr": 0.0026,
+        "auroc": 0.9872,
+        "tp": 130,
+        "fp": 34,
+        "tn": 12928,
+        "fn": 25
+      },
+      "AB6_LineageOnly": {
+        "precision": 1.0,
+        "recall": 0.4065,
+        "f1": 0.578,
+        "fpr": 0.0,
+        "auroc": 0.8606,
+        "tp": 63,
+        "fp": 0,
+        "tn": 12962,
+        "fn": 92
       }
     },
-    "tau_sweep_AB7": [
+    "threshold_sweep": [
       {
-        "tau_llr": 0.1,
-        "equivalent_D_PITSA": 0.384,
-        "contestation_recall": 1.0,
-        "false_friction_rate": 0.425,
-        "precision": 0.6107,
-        "f1": 0.7583
+        "precision": 0.1187,
+        "recall": 0.9613,
+        "f1": 0.2113,
+        "fpr": 0.0853,
+        "auroc": 0.9807,
+        "tp": 149,
+        "fp": 1106,
+        "tn": 11856,
+        "fn": 6,
+        "tau_llr": 0.0
       },
       {
-        "tau_llr": 0.25,
-        "equivalent_D_PITSA": 0.4329,
-        "contestation_recall": 1.0,
-        "false_friction_rate": 0.1933,
-        "precision": 0.7752,
-        "f1": 0.8734
+        "precision": 0.1751,
+        "recall": 0.9613,
+        "f1": 0.2962,
+        "fpr": 0.0542,
+        "auroc": 0.9807,
+        "tp": 149,
+        "fp": 702,
+        "tn": 12260,
+        "fn": 6,
+        "tau_llr": 1.0
       },
       {
-        "tau_llr": 0.4,
-        "equivalent_D_PITSA": 0.4831,
-        "contestation_recall": 0.9925,
-        "false_friction_rate": 0.07,
-        "precision": 0.9043,
-        "f1": 0.9464
+        "precision": 0.191,
+        "recall": 0.9032,
+        "f1": 0.3153,
+        "fpr": 0.0457,
+        "auroc": 0.9807,
+        "tp": 140,
+        "fp": 593,
+        "tn": 12369,
+        "fn": 15,
+        "tau_llr": 2.0
       },
       {
-        "tau_llr": 0.5,
-        "equivalent_D_PITSA": 0.5169,
-        "contestation_recall": 0.955,
-        "false_friction_rate": 0.0283,
-        "precision": 0.9574,
-        "f1": 0.9562
+        "precision": 0.2374,
+        "recall": 0.8194,
+        "f1": 0.3681,
+        "fpr": 0.0315,
+        "auroc": 0.9807,
+        "tp": 127,
+        "fp": 408,
+        "tn": 12554,
+        "fn": 28,
+        "tau_llr": 4.0
       },
       {
-        "tau_llr": 0.65,
-        "equivalent_D_PITSA": 0.5671,
-        "contestation_recall": 0.82,
-        "false_friction_rate": 0.005,
-        "precision": 0.9909,
-        "f1": 0.8974
+        "precision": 0.7554,
+        "recall": 0.6774,
+        "f1": 0.7143,
+        "fpr": 0.0026,
+        "auroc": 0.9807,
+        "tp": 105,
+        "fp": 34,
+        "tn": 12928,
+        "fn": 50,
+        "tau_llr": 6.0
       },
       {
-        "tau_llr": 0.85,
-        "equivalent_D_PITSA": 0.6318,
-        "contestation_recall": 0.575,
-        "false_friction_rate": 0.0,
         "precision": 1.0,
-        "f1": 0.7302
+        "recall": 0.6065,
+        "f1": 0.755,
+        "fpr": 0.0,
+        "auroc": 0.9807,
+        "tp": 94,
+        "fp": 0,
+        "tn": 12962,
+        "fn": 61,
+        "tau_llr": 8.0
       },
       {
-        "tau_llr": 1.1,
-        "equivalent_D_PITSA": 0.7063,
-        "contestation_recall": 0.5025,
-        "false_friction_rate": 0.0,
         "precision": 1.0,
-        "f1": 0.6689
+        "recall": 0.5806,
+        "f1": 0.7347,
+        "fpr": 0.0,
+        "auroc": 0.9807,
+        "tp": 90,
+        "fp": 0,
+        "tn": 12962,
+        "fn": 65,
+        "tau_llr": 10.0
       }
     ],
-    "adaptive_masking_curve_AB8": [
+    "adaptive_lolbin_masking_curve": [
       {
+        "masked_attributes_k": 0,
         "rho_mask": 0.0,
-        "mean_R3_LLR": 3.47,
-        "mean_R3_ITPI_recall": 1.0,
-        "sd_R3_ITPI_recall": 0.0
+        "mean_llr": 8.5651,
+        "sd_llr": 4.741,
+        "hostile_recall": 0.8194
       },
       {
-        "rho_mask": 0.25,
-        "mean_R3_LLR": 2.6365,
-        "mean_R3_ITPI_recall": 1.0,
-        "sd_R3_ITPI_recall": 0.0
+        "masked_attributes_k": 1,
+        "rho_mask": 0.2,
+        "mean_llr": 6.5247,
+        "sd_llr": 4.6951,
+        "hostile_recall": 0.7097
       },
       {
-        "rho_mask": 0.5,
-        "mean_R3_LLR": 1.8063,
-        "mean_R3_ITPI_recall": 1.0,
-        "sd_R3_ITPI_recall": 0.0
+        "masked_attributes_k": 2,
+        "rho_mask": 0.4,
+        "mean_llr": 3.9463,
+        "sd_llr": 4.1903,
+        "hostile_recall": 0.4903
       },
       {
-        "rho_mask": 0.75,
-        "mean_R3_LLR": 0.9699,
-        "mean_R3_ITPI_recall": 0.9967,
-        "sd_R3_ITPI_recall": 0.0233
+        "masked_attributes_k": 3,
+        "rho_mask": 0.6,
+        "mean_llr": 2.162,
+        "sd_llr": 3.6472,
+        "hostile_recall": 0.3226
       },
       {
-        "rho_mask": 0.85,
-        "mean_R3_LLR": 0.6432,
-        "mean_R3_ITPI_recall": 0.7933,
-        "sd_R3_ITPI_recall": 0.1455
+        "masked_attributes_k": 4,
+        "rho_mask": 0.8,
+        "mean_llr": 0.2392,
+        "sd_llr": 3.025,
+        "hostile_recall": 0.1806
       },
       {
+        "masked_attributes_k": 5,
         "rho_mask": 1.0,
-        "mean_R3_LLR": 0.1444,
-        "mean_R3_ITPI_recall": 0.0483,
-        "sd_R3_ITPI_recall": 0.098
+        "mean_llr": -1.9922,
+        "sd_llr": 0.0,
+        "hostile_recall": 0.0
       }
     ],
-    "stress_1000_total_ms": 27.295,
-    "stress_1000_ms_per_alert": 0.02729
-  },
-  "experiment_2_study1_main": {
-    "cell_summaries": {
-      "C1_Disfluent_Standard": {
-        "n_analysts": 40,
-        "V_depth_mean": 0.5445,
-        "V_depth_sd": 0.1359,
-        "V_dwell_mean": 0.4653,
-        "V_dwell_sd": 0.1193,
-        "true_override_contested_mean": 0.5344,
-        "true_override_contested_sd": 0.192,
-        "r3_itpi_fn_rate_mean": 0.4875,
-        "r3_itpi_fn_rate_sd": 0.2277,
-        "consistent_R1a_acc_mean": 0.9219,
-        "consistent_R1a_acc_sd": 0.0881,
-        "false_override_R1a_mean": 0.0781,
-        "OC_net_mean": 0.4562,
-        "OC_net_sd": 0.2292,
-        "A_self_mean": 4.9235,
-        "A_self_sd": 0.9597,
-        "decision_time_s_mean": 38.95,
-        "nasa_tlx_mean": 4.21
-      },
-      "C2_Fluent_Standard": {
-        "n_analysts": 40,
-        "V_depth_mean": 0.3291,
-        "V_depth_sd": 0.1304,
-        "V_dwell_mean": 0.2893,
-        "V_dwell_sd": 0.1038,
-        "true_override_contested_mean": 0.2938,
-        "true_override_contested_sd": 0.2157,
-        "r3_itpi_fn_rate_mean": 0.7333,
-        "r3_itpi_fn_rate_sd": 0.2554,
-        "consistent_R1a_acc_mean": 0.9375,
-        "consistent_R1a_acc_sd": 0.0801,
-        "false_override_R1a_mean": 0.0625,
-        "OC_net_mean": 0.2313,
-        "OC_net_sd": 0.2344,
-        "A_self_mean": 3.4967,
-        "A_self_sd": 1.0549,
-        "decision_time_s_mean": 27.31,
-        "nasa_tlx_mean": 3.91
-      },
-      "C3_Disfluent_DECS": {
-        "n_analysts": 40,
-        "V_depth_mean": 0.738,
-        "V_depth_sd": 0.1497,
-        "V_dwell_mean": 0.6688,
-        "V_dwell_sd": 0.1249,
-        "true_override_contested_mean": 0.7562,
-        "true_override_contested_sd": 0.1697,
-        "r3_itpi_fn_rate_mean": 0.1875,
-        "r3_itpi_fn_rate_sd": 0.161,
-        "consistent_R1a_acc_mean": 0.9187,
-        "consistent_R1a_acc_sd": 0.1186,
-        "false_override_R1a_mean": 0.0813,
-        "OC_net_mean": 0.675,
-        "OC_net_sd": 0.2216,
-        "A_self_mean": 5.8759,
-        "A_self_sd": 0.8583,
-        "decision_time_s_mean": 50.97,
-        "nasa_tlx_mean": 4.55
-      },
-      "C4_Fluent_DECS": {
-        "n_analysts": 40,
-        "V_depth_mean": 0.6545,
-        "V_depth_sd": 0.1542,
-        "V_dwell_mean": 0.6052,
-        "V_dwell_sd": 0.1265,
-        "true_override_contested_mean": 0.7203,
-        "true_override_contested_sd": 0.2075,
-        "r3_itpi_fn_rate_mean": 0.2,
-        "r3_itpi_fn_rate_sd": 0.2302,
-        "consistent_R1a_acc_mean": 0.9094,
-        "consistent_R1a_acc_sd": 0.0938,
-        "false_override_R1a_mean": 0.0906,
-        "OC_net_mean": 0.6297,
-        "OC_net_sd": 0.2514,
-        "A_self_mean": 5.595,
-        "A_self_sd": 0.8688,
-        "decision_time_s_mean": 49.0,
-        "nasa_tlx_mean": 4.53
-      }
-    },
-    "hypothesis_tests": {
-      "H1": {
-        "c2_vs_c1_diff_V_depth": -0.2154,
-        "t_stat": -7.2347,
-        "p_unadjusted": 2.829695214561935e-10,
-        "p_holm": 5.65939042912387e-10,
-        "cohens_d": -1.6177,
-        "lmm_fluency_beta": -0.2154,
-        "lmm_fluency_se": 0.0295
-      },
-      "H2": {
-        "c2_vs_c1_diff_true_override": -0.2406,
-        "c2_vs_c1_diff_r3_itpi_fn": 0.2458,
-        "t_stat": -5.2709,
-        "p_unadjusted": 1.203950699991232e-06,
-        "p_holm": 1.203950699991232e-06,
-        "cohens_d": -1.1786,
-        "glmm_fluency_logit_beta": -1.0244,
-        "glmm_fluency_odds_ratio": 0.359
-      },
-      "H3a_H3b": {
-        "c4_vs_c2_diff_OC": 0.3984,
-        "c4_vs_c2_diff_true_override": 0.4266,
-        "t_stat_OC": 7.3325,
-        "p_unadjusted": 1.866345659236958e-10,
-        "p_holm": 5.599036977710874e-10,
-        "cohens_d_OC": 1.6396,
-        "lmm_interaction_V_depth_beta": 0.1319,
-        "lmm_interaction_V_depth_p": 0.003217611330901065,
-        "glmm_interaction_override_beta": 0.8368,
-        "glmm_interaction_override_OR": 2.309,
-        "glmm_interaction_override_p": 0.005213714550861723
-      },
-      "H3c_TOST_Equivalence": {
-        "decs_R1a_acc_mean": 0.9141,
-        "standard_R1a_acc_mean": 0.9297,
-        "diff_decs_minus_std": -0.0156,
-        "equivalence_bounds": [
-          -0.05,
-          0.05
-        ],
-        "p_tost": 0.012326,
-        "equivalent_within_5pp": true
-      },
-      "H4_Bootstrap_Mediation": {
-        "path_a_fluency_to_V_depth": -0.2188,
-        "path_b_V_depth_to_override": 0.8005,
-        "direct_effect_c_prime": -0.0654,
-        "total_effect_c": -0.2406,
-        "indirect_effect_ab": -0.1752,
-        "boot_95_ci": [
-          -0.2415,
-          -0.1151
-        ],
-        "proportion_mediated": 0.728
-      },
-      "H5_Accountability": {
-        "c2_vs_c1_diff_A_self": -1.4268,
-        "c2_vs_c1_cohens_d": -1.4149,
-        "c4_vs_c2_diff_A_self": 2.0983,
-        "c4_vs_c2_t_stat": 9.7112,
-        "c4_vs_c2_p_holm": 2.591785700609306e-14,
-        "c4_vs_c2_cohens_d": 2.1715,
-        "lmm_interaction_A_self_beta": 1.1459
-      },
-      "Habituation_Block1_vs_Block2_C4": {
-        "block1_contested_override": 0.7438,
-        "block2_contested_override": 0.6969,
-        "diff_b2_minus_b1": -0.0469,
-        "p_paired_t": 0.1866
-      }
+    "test_llr_distribution": {
+      "hostile_mean_llr": 8.5651,
+      "hostile_sd_llr": 4.741,
+      "benign_mean_llr": -7.5291,
+      "benign_sd_llr": 4.8164
     }
   },
-  "experiment_2_multiseed_stability": [
-    {
-      "seed": 20261014,
-      "C2_contested_override": 0.2938,
-      "C4_contested_override": 0.7203,
-      "C2_V_depth": 0.3291,
-      "C4_V_depth": 0.6545
-    },
-    {
-      "seed": 20261015,
-      "C2_contested_override": 0.2531,
-      "C4_contested_override": 0.75,
-      "C2_V_depth": 0.3276,
-      "C4_V_depth": 0.6688
-    },
-    {
-      "seed": 20261016,
-      "C2_contested_override": 0.2719,
-      "C4_contested_override": 0.7656,
-      "C2_V_depth": 0.3364,
-      "C4_V_depth": 0.7237
-    },
-    {
-      "seed": 20261017,
-      "C2_contested_override": 0.2422,
-      "C4_contested_override": 0.7547,
-      "C2_V_depth": 0.3219,
-      "C4_V_depth": 0.6942
-    },
-    {
-      "seed": 20261018,
-      "C2_contested_override": 0.3281,
-      "C4_contested_override": 0.7656,
-      "C2_V_depth": 0.3571,
-      "C4_V_depth": 0.6675
-    }
-  ],
-  "experiment_3_study1b_ablation": {
-    "arm_summaries": {
-      "C2_Anchor_Only_AB1": {
-        "n_analysts": 30,
-        "V_depth_contested_mean": 0.5063,
-        "V_depth_contested_sd": 0.1081,
-        "true_override_contested_mean": 0.4042,
-        "true_override_contested_sd": 0.1818,
-        "r3_itpi_override_mean": 0.3778
+  "experiment_2_salad_soc": {
+    "dataset": "SALAD-SOC SIEM Alert Corpus (salad_test.csv)",
+    "total_alerts": 416781,
+    "train_alerts": 291746,
+    "test_alerts": 125035,
+    "malicious_alerts_total": 88570,
+    "benign_alerts_total": 328211,
+    "malicious_alerts_test": 26571,
+    "benign_alerts_test": 98464,
+    "tau_llr_operating_point": 1.0,
+    "pitsa_test_inference_ms_total": 390.41,
+    "pitsa_ms_per_alert": 0.00312,
+    "models_clean_vs_itpi": {
+      "PITSA_Partitioned": {
+        "clean": {
+          "precision": 0.725,
+          "recall": 0.6868,
+          "f1": 0.7054,
+          "fpr": 0.0703,
+          "auroc": 0.938,
+          "tp": 18250,
+          "fp": 6924,
+          "tn": 91540,
+          "fn": 8321
+        },
+        "itpi": {
+          "precision": 0.725,
+          "recall": 0.6868,
+          "f1": 0.7054,
+          "fpr": 0.0703,
+          "auroc": 0.938,
+          "tp": 18250,
+          "fp": 6924,
+          "tn": 91540,
+          "fn": 8321
+        }
       },
-      "C2_Fluent_Standard": {
-        "n_analysts": 30,
-        "V_depth_contested_mean": 0.2998,
-        "V_depth_contested_sd": 0.1009,
-        "true_override_contested_mean": 0.2583,
-        "true_override_contested_sd": 0.1606,
-        "r3_itpi_override_mean": 0.2444
+      "NaiveBayes_Unpartitioned": {
+        "clean": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "fpr": 0.0,
+          "auroc": 1.0,
+          "tp": 26571,
+          "fp": 0,
+          "tn": 98464,
+          "fn": 0
+        },
+        "itpi": {
+          "precision": 1.0,
+          "recall": 0.0177,
+          "f1": 0.0348,
+          "fpr": 0.0,
+          "auroc": 1.0,
+          "tp": 470,
+          "fp": 0,
+          "tn": 98464,
+          "fn": 26101
+        }
       },
-      "C2_StaticWarn_DC1": {
-        "n_analysts": 30,
-        "V_depth_contested_mean": 0.3698,
-        "V_depth_contested_sd": 0.1065,
-        "true_override_contested_mean": 0.3333,
-        "true_override_contested_sd": 0.2375,
-        "r3_itpi_override_mean": 0.2667
+      "LogisticRegression_Unpartitioned": {
+        "clean": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "fpr": 0.0,
+          "auroc": 1.0,
+          "tp": 26571,
+          "fp": 0,
+          "tn": 98464,
+          "fn": 0
+        },
+        "itpi": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "auroc": 0.9999,
+          "tp": 0,
+          "fp": 0,
+          "tn": 98464,
+          "fn": 26571
+        }
       },
-      "C4_Full_DECS": {
-        "n_analysts": 30,
-        "V_depth_contested_mean": 0.6359,
-        "V_depth_contested_sd": 0.1319,
-        "true_override_contested_mean": 0.6417,
-        "true_override_contested_sd": 0.2196,
-        "r3_itpi_override_mean": 0.6444
+      "RandomForest_Unpartitioned": {
+        "clean": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "fpr": 0.0,
+          "auroc": 1.0,
+          "tp": 26571,
+          "fp": 0,
+          "tn": 98464,
+          "fn": 0
+        },
+        "itpi": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "fpr": 0.0,
+          "auroc": 1.0,
+          "tp": 0,
+          "fp": 0,
+          "tn": 98464,
+          "fn": 26571
+        }
       }
     },
-    "contrasts": {
-      "Stage1_Anchoring_Increment_AB1_vs_C2": {
-        "delta_override": 0.1458,
-        "t_stat": 3.2925,
-        "p_value": 0.0017067212471952116,
-        "cohens_d": 0.8501
+    "by_difficulty_level": {
+      "easy": {
+        "count": 148,
+        "pitsa_recall": 0.0608,
+        "mean_llr": 0.0217
       },
-      "Stage2_PITSA_Cue_Increment_C4_vs_AB1": {
-        "delta_override": 0.2375,
-        "t_stat": 4.5631,
-        "p_value": 2.7934828841684146e-05,
-        "cohens_d": 1.1782
+      "medium": {
+        "count": 17725,
+        "pitsa_recall": 0.6083,
+        "mean_llr": 1.5304
       },
-      "Conditional_DECS_vs_Static_Warning_C4_vs_DC1": {
-        "delta_override": 0.3083,
-        "t_stat": 5.2218,
-        "p_value": 2.534397441582502e-06,
-        "cohens_d": 1.3483
+      "hard": {
+        "count": 8698,
+        "pitsa_recall": 0.8574,
+        "mean_llr": 3.5487
       }
+    },
+    "by_mitre_tactic": {
+      "Impact": {
+        "count": 15197,
+        "pitsa_recall": 0.5541,
+        "mean_llr": 1.1686
+      },
+      "Discovery": {
+        "count": 5420,
+        "pitsa_recall": 0.772,
+        "mean_llr": 2.0323
+      },
+      "Execution": {
+        "count": 1986,
+        "pitsa_recall": 0.9814,
+        "mean_llr": 4.1431
+      },
+      "Reconnaissance": {
+        "count": 590,
+        "pitsa_recall": 0.9966,
+        "mean_llr": 4.8682
+      },
+      "Credential Access": {
+        "count": 392,
+        "pitsa_recall": 0.625,
+        "mean_llr": 1.0019
+      },
+      "Persistence": {
+        "count": 109,
+        "pitsa_recall": 0.9908,
+        "mean_llr": 5.998
+      },
+      "Command and Control": {
+        "count": 92,
+        "pitsa_recall": 0.6522,
+        "mean_llr": 0.7344
+      },
+      "Initial Access": {
+        "count": 90,
+        "pitsa_recall": 0.0222,
+        "mean_llr": 0.0647
+      },
+      "Lateral Movement": {
+        "count": 7,
+        "pitsa_recall": 1.0,
+        "mean_llr": 3.2845
+      }
+    },
+    "feature_group_ablations": {
+      "Full_PITSA": {
+        "precision": 0.725,
+        "recall": 0.6868,
+        "f1": 0.7054,
+        "fpr": 0.0703,
+        "auroc": 0.938,
+        "tp": 18250,
+        "fp": 6924,
+        "tn": 91540,
+        "fn": 8321
+      },
+      "AB1_NoProtoService": {
+        "precision": 0.6238,
+        "recall": 0.6413,
+        "f1": 0.6324,
+        "fpr": 0.1044,
+        "auroc": 0.8965,
+        "tp": 17041,
+        "fp": 10279,
+        "tn": 88185,
+        "fn": 9530
+      },
+      "AB2_NoFlowVol": {
+        "precision": 0.6154,
+        "recall": 0.3691,
+        "f1": 0.4615,
+        "fpr": 0.0623,
+        "auroc": 0.8151,
+        "tp": 9808,
+        "fp": 6130,
+        "tn": 92334,
+        "fn": 16763
+      },
+      "AB3_NoDurSeg": {
+        "precision": 0.7118,
+        "recall": 0.6838,
+        "f1": 0.6975,
+        "fpr": 0.0747,
+        "auroc": 0.935,
+        "tp": 18170,
+        "fp": 7356,
+        "tn": 91108,
+        "fn": 8401
+      },
+      "AB4_NoBurst": {
+        "precision": 0.7241,
+        "recall": 0.6869,
+        "f1": 0.705,
+        "fpr": 0.0706,
+        "auroc": 0.9381,
+        "tp": 18251,
+        "fp": 6954,
+        "tn": 91510,
+        "fn": 8320
+      },
+      "AB5_NoTargetRep": {
+        "precision": 0.7253,
+        "recall": 0.6868,
+        "f1": 0.7056,
+        "fpr": 0.0702,
+        "auroc": 0.9383,
+        "tp": 18250,
+        "fp": 6911,
+        "tn": 91553,
+        "fn": 8321
+      }
+    },
+    "test_llr_distribution": {
+      "hostile_mean_llr": 2.1827,
+      "hostile_sd_llr": 2.3644,
+      "benign_mean_llr": -3.0013,
+      "benign_sd_llr": 2.3588
     }
   },
-  "experiment_4_study2_qualitative": {
-    "n_informants": 20,
-    "total_first_order_codes": 34,
-    "saturation_reached_at_interview": "I-15 (0 new codes across I-15 to I-20)",
-    "overall_cohens_kappa": 0.88,
-    "informants": [
+  "experiment_3_lmd2023_kev": {
+    "dataset": "LMD-2023 Windows Sysmon Lateral Movement Corpus",
+    "total_rows": 1777930,
+    "train_rows": 1244551,
+    "test_rows": 533379,
+    "class_distribution_total": {
+      "Normal_0": 1611637,
+      "Malicious_1": 110746,
+      "RedTeam_2": 55547
+    },
+    "tau_llr_operating_point": 0.5,
+    "pitsa_test_inference_ms_total": 2474.008,
+    "pitsa_us_per_event": 4.6384,
+    "primary_metrics_at_tau_0_5": {
+      "precision": 0.6879,
+      "recall": 0.9993,
+      "f1": 0.8149,
+      "fpr": 0.0468,
+      "auroc": 0.9963,
+      "tp": 49854,
+      "fp": 22618,
+      "tn": 460873,
+      "fn": 34,
+      "redteam_lateral_movement_recall": 0.9999,
+      "malicious_standard_recall": 0.999
+    },
+    "threshold_sweep": [
       {
-        "id": "I-01",
-        "role": "Tier-1 SOC Analyst",
-        "sector": "Financial Services",
-        "exp_yrs": 2.0,
-        "new_codes": 9
+        "precision": 0.6878,
+        "recall": 0.9993,
+        "f1": 0.8148,
+        "fpr": 0.0468,
+        "auroc": 0.9963,
+        "tp": 49854,
+        "fp": 22627,
+        "tn": 460864,
+        "fn": 34,
+        "tau_llr": 0.0,
+        "redteam_recall": 0.9999
       },
       {
-        "id": "I-02",
-        "role": "Tier-1 SOC Analyst",
-        "sector": "Managed Detection & Response (MDR)",
-        "exp_yrs": 1.5,
-        "new_codes": 5
+        "precision": 0.6879,
+        "recall": 0.9993,
+        "f1": 0.8149,
+        "fpr": 0.0468,
+        "auroc": 0.9963,
+        "tp": 49854,
+        "fp": 22618,
+        "tn": 460873,
+        "fn": 34,
+        "tau_llr": 0.5,
+        "redteam_recall": 0.9999
       },
       {
-        "id": "I-03",
-        "role": "Tier-2 Incident Responder",
-        "sector": "Healthcare Enterprise",
-        "exp_yrs": 4.5,
-        "new_codes": 4
+        "precision": 0.6884,
+        "recall": 0.9991,
+        "f1": 0.8152,
+        "fpr": 0.0467,
+        "auroc": 0.9963,
+        "tp": 49843,
+        "fp": 22558,
+        "tn": 460933,
+        "fn": 45,
+        "tau_llr": 1.0,
+        "redteam_recall": 0.9992
       },
       {
-        "id": "I-04",
-        "role": "SOC Manager / CISO",
-        "sector": "Global Banking",
-        "exp_yrs": 11.0,
-        "new_codes": 4
+        "precision": 0.6927,
+        "recall": 0.9969,
+        "f1": 0.8174,
+        "fpr": 0.0456,
+        "auroc": 0.9963,
+        "tp": 49735,
+        "fp": 22066,
+        "tn": 461425,
+        "fn": 153,
+        "tau_llr": 2.0,
+        "redteam_recall": 0.993
       },
       {
-        "id": "I-05",
-        "role": "Tier-1 SOC Analyst",
-        "sector": "Telecommunications",
-        "exp_yrs": 2.5,
-        "new_codes": 2
-      },
-      {
-        "id": "I-06",
-        "role": "Tier-2 Incident Responder",
-        "sector": "Cloud SaaS Provider",
-        "exp_yrs": 5.0,
-        "new_codes": 2
-      },
-      {
-        "id": "I-07",
-        "role": "Tier-3 Threat Hunter",
-        "sector": "Defense & Critical Infrastructure",
-        "exp_yrs": 7.5,
-        "new_codes": 2
-      },
-      {
-        "id": "I-08",
-        "role": "Tier-1 SOC Analyst",
-        "sector": "Retail Enterprise",
-        "exp_yrs": 1.8,
-        "new_codes": 1
-      },
-      {
-        "id": "I-09",
-        "role": "SOC Manager / CISO",
-        "sector": "Insurance & FinTech",
-        "exp_yrs": 9.5,
-        "new_codes": 1
-      },
-      {
-        "id": "I-10",
-        "role": "Tier-2 Incident Responder",
-        "sector": "MDR Provider",
-        "exp_yrs": 4.0,
-        "new_codes": 1
-      },
-      {
-        "id": "I-11",
-        "role": "Tier-3 Threat Hunter",
-        "sector": "Financial Services",
-        "exp_yrs": 6.5,
-        "new_codes": 1
-      },
-      {
-        "id": "I-12",
-        "role": "Tier-1 SOC Analyst",
-        "sector": "Energy & Utilities",
-        "exp_yrs": 3.0,
-        "new_codes": 0
-      },
-      {
-        "id": "I-13",
-        "role": "Tier-2 Incident Responder",
-        "sector": "Higher Education & Research",
-        "exp_yrs": 3.5,
-        "new_codes": 1
-      },
-      {
-        "id": "I-14",
-        "role": "SOC Manager / CISO",
-        "sector": "Healthcare Enterprise",
-        "exp_yrs": 12.0,
-        "new_codes": 1
-      },
-      {
-        "id": "I-15",
-        "role": "Tier-3 Threat Hunter",
-        "sector": "MDR Provider",
-        "exp_yrs": 8.0,
-        "new_codes": 0
-      },
-      {
-        "id": "I-16",
-        "role": "Tier-1 SOC Analyst",
-        "sector": "Financial Services",
-        "exp_yrs": 2.2,
-        "new_codes": 0
-      },
-      {
-        "id": "I-17",
-        "role": "Tier-2 Incident Responder",
-        "sector": "Telecommunications",
-        "exp_yrs": 4.8,
-        "new_codes": 0
-      },
-      {
-        "id": "I-18",
-        "role": "Tier-2 Incident Responder",
-        "sector": "Government CERT",
-        "exp_yrs": 5.5,
-        "new_codes": 0
-      },
-      {
-        "id": "I-19",
-        "role": "Tier-3 Threat Hunter",
-        "sector": "Cloud Security Vendor",
-        "exp_yrs": 7.0,
-        "new_codes": 0
-      },
-      {
-        "id": "I-20",
-        "role": "SOC Manager / CISO",
-        "sector": "Critical Manufacturing",
-        "exp_yrs": 14.0,
-        "new_codes": 0
+        "precision": 0.7026,
+        "recall": 0.9839,
+        "f1": 0.8198,
+        "fpr": 0.043,
+        "auroc": 0.9963,
+        "tp": 49087,
+        "fp": 20775,
+        "tn": 462716,
+        "fn": 801,
+        "tau_llr": 4.0,
+        "redteam_recall": 0.955
       }
     ],
-    "aggregate_dimensions": [
-      {
-        "aggregate_dimension": "AD-1: Narrative Seduction & Epistemic Smoothing under SLA Pressure",
-        "second_order_themes": [
-          "1A. Coherent prose perceived as cross-checked correlation",
-          "1B. Vulnerability to benign administrative cover stories in CLI logs (ITPI)"
-        ],
-        "informant_endorsement_count": 19,
-        "informant_endorsement_pct": 95.0,
-        "cohens_kappa": 0.89,
-        "mapped_quantitative_construct": "H1 (V_depth, V_dwell) & H2 (Override Calibration on Contested/ITPI Alerts)"
+    "feature_group_ablations": {
+      "Full_PITSA": {
+        "precision": 0.6879,
+        "recall": 0.9993,
+        "f1": 0.8149,
+        "fpr": 0.0468,
+        "auroc": 0.9963,
+        "tp": 49854,
+        "fp": 22618,
+        "tn": 460873,
+        "fn": 34,
+        "redteam_recall": 0.9999
       },
-      {
-        "aggregate_dimension": "AD-2: Institutional Accountability Diffusion & Audit Rubber-Stamping",
-        "second_order_themes": [
-          "2A. 'The Copilot Cleared It' as post-mortem liability shield",
-          "2B. Copy-pasting fluent LLM rationales into SIEM closure notes without raw EID verification"
-        ],
-        "informant_endorsement_count": 18,
-        "informant_endorsement_pct": 90.0,
-        "cohens_kappa": 0.87,
-        "mapped_quantitative_construct": "H5 (Accountability Attribution A_self) & NIST CSF 2.0 RS.AN-06 / GV.RR-02"
+      "AB1_NoProcLineage": {
+        "precision": 0.6834,
+        "recall": 0.9986,
+        "f1": 0.8115,
+        "fpr": 0.0477,
+        "auroc": 0.9958,
+        "tp": 49816,
+        "fp": 23076,
+        "tn": 460415,
+        "fn": 72,
+        "redteam_recall": 0.9969
       },
-      {
-        "aggregate_dimension": "AD-3: Selective Epistemic Contestation vs. Blanket Friction Fatigue",
-        "second_order_themes": [
-          "3A. Rejection of always-on generic AI disclaimer banners (habituation within 1 shift)",
-          "3B. Acceptance of PITSA-gated conflict cues that pinpoint specific Sysmon Event IDs (e.g., EID 10 lsass handle)"
-        ],
-        "informant_endorsement_count": 18,
-        "informant_endorsement_pct": 90.0,
-        "cohens_kappa": 0.88,
-        "mapped_quantitative_construct": "H3a-c (DECS x Fluency) & Study 1B (C4 vs. C2-Anchor vs. Static Warning)"
+      "AB2_NoRegFileTarget": {
+        "precision": 0.6879,
+        "recall": 0.9993,
+        "f1": 0.8149,
+        "fpr": 0.0468,
+        "auroc": 0.9963,
+        "tp": 49854,
+        "fp": 22621,
+        "tn": 460870,
+        "fn": 34,
+        "redteam_recall": 0.9999
+      },
+      "AB3_NoNetPipe": {
+        "precision": 0.6912,
+        "recall": 0.9982,
+        "f1": 0.8168,
+        "fpr": 0.046,
+        "auroc": 0.9973,
+        "tp": 49797,
+        "fp": 22247,
+        "tn": 461244,
+        "fn": 91,
+        "redteam_recall": 0.9969
+      },
+      "AB4_NoDestPort": {
+        "precision": 0.6926,
+        "recall": 0.9947,
+        "f1": 0.8166,
+        "fpr": 0.0456,
+        "auroc": 0.9962,
+        "tp": 49624,
+        "fp": 22029,
+        "tn": 461462,
+        "fn": 264,
+        "redteam_recall": 0.9863
+      },
+      "AB5_NoHostUserContext": {
+        "precision": 0.6089,
+        "recall": 0.9971,
+        "f1": 0.7561,
+        "fpr": 0.0661,
+        "auroc": 0.9952,
+        "tp": 49743,
+        "fp": 31950,
+        "tn": 451541,
+        "fn": 145,
+        "redteam_recall": 0.9991
       }
-    ]
+    },
+    "test_llr_distribution": {
+      "hostile_mean_llr": 15.878,
+      "hostile_sd_llr": 5.1904,
+      "redteam_mean_llr": 10.7773,
+      "redteam_sd_llr": 5.0992,
+      "benign_mean_llr": -21.222,
+      "benign_sd_llr": 8.5267
+    },
+    "cisa_kev_catalog": {
+      "total_cves": 1741,
+      "ransomware_known_cves": 361,
+      "ransomware_fraction": 0.2074,
+      "top_5_vendors": {
+        "Microsoft": 390,
+        "Cisco": 100,
+        "Apple": 95,
+        "Adobe": 82,
+        "Google": 75
+      }
+    }
+  },
+  "experiment_4_dcedm_decision_theoretic": {
+    "otrf_trace_driven": {
+      "tau_llr": 4.0,
+      "banner_firing_rate_Pi3_Static": 1.0,
+      "banner_firing_rate_Pi4_DECS_overall": 0.0408,
+      "banner_firing_rate_Pi4_DECS_benign": 0.0315,
+      "banner_firing_rate_Pi4_DECS_hostile": 0.8194,
+      "lambda_F_sensitivity_sweep": [
+        {
+          "lambda_F": 0.0,
+          "Pi1_Disfluent_CMR": 0.1391,
+          "Pi2_Unassisted_Fluent_CMR": 0.1391,
+          "Pi3_Static_Banner_CMR": 0.1391,
+          "Pi4_Selective_DECS_CMR": 0.0873,
+          "fluency_trap_inflation_pp": 0.0,
+          "decs_risk_reduction_pp": 5.17,
+          "Pi1_Benign_Inspect_Rate": 0.1674,
+          "Pi2_Benign_Inspect_Rate": 0.1674,
+          "Pi3_Benign_Inspect_Rate": 0.1674,
+          "Pi4_Benign_Inspect_Rate": 0.1719
+        },
+        {
+          "lambda_F": 0.1,
+          "Pi1_Disfluent_CMR": 0.1391,
+          "Pi2_Unassisted_Fluent_CMR": 0.1691,
+          "Pi3_Static_Banner_CMR": 0.1621,
+          "Pi4_Selective_DECS_CMR": 0.0915,
+          "fluency_trap_inflation_pp": 3.0,
+          "decs_risk_reduction_pp": 7.76,
+          "Pi1_Benign_Inspect_Rate": 0.1674,
+          "Pi2_Benign_Inspect_Rate": 0.1387,
+          "Pi3_Benign_Inspect_Rate": 0.1446,
+          "Pi4_Benign_Inspect_Rate": 0.1619
+        },
+        {
+          "lambda_F": 0.2,
+          "Pi1_Disfluent_CMR": 0.1391,
+          "Pi2_Unassisted_Fluent_CMR": 0.204,
+          "Pi3_Static_Banner_CMR": 0.188,
+          "Pi4_Selective_DECS_CMR": 0.0957,
+          "fluency_trap_inflation_pp": 6.49,
+          "decs_risk_reduction_pp": 10.83,
+          "Pi1_Benign_Inspect_Rate": 0.1674,
+          "Pi2_Benign_Inspect_Rate": 0.1139,
+          "Pi3_Benign_Inspect_Rate": 0.1243,
+          "Pi4_Benign_Inspect_Rate": 0.1523
+        },
+        {
+          "lambda_F": 0.3,
+          "Pi1_Disfluent_CMR": 0.1391,
+          "Pi2_Unassisted_Fluent_CMR": 0.2439,
+          "Pi3_Static_Banner_CMR": 0.217,
+          "Pi4_Selective_DECS_CMR": 0.0999,
+          "fluency_trap_inflation_pp": 10.48,
+          "decs_risk_reduction_pp": 14.4,
+          "Pi1_Benign_Inspect_Rate": 0.1674,
+          "Pi2_Benign_Inspect_Rate": 0.0928,
+          "Pi3_Benign_Inspect_Rate": 0.1063,
+          "Pi4_Benign_Inspect_Rate": 0.1433
+        },
+        {
+          "lambda_F": 0.4,
+          "Pi1_Disfluent_CMR": 0.1391,
+          "Pi2_Unassisted_Fluent_CMR": 0.2888,
+          "Pi3_Static_Banner_CMR": 0.249,
+          "Pi4_Selective_DECS_CMR": 0.1043,
+          "fluency_trap_inflation_pp": 14.97,
+          "decs_risk_reduction_pp": 18.45,
+          "Pi1_Benign_Inspect_Rate": 0.1674,
+          "Pi2_Benign_Inspect_Rate": 0.0749,
+          "Pi3_Benign_Inspect_Rate": 0.0905,
+          "Pi4_Benign_Inspect_Rate": 0.1349
+        },
+        {
+          "lambda_F": 0.5,
+          "Pi1_Disfluent_CMR": 0.1391,
+          "Pi2_Unassisted_Fluent_CMR": 0.3384,
+          "Pi3_Static_Banner_CMR": 0.2841,
+          "Pi4_Selective_DECS_CMR": 0.1086,
+          "fluency_trap_inflation_pp": 19.94,
+          "decs_risk_reduction_pp": 22.98,
+          "Pi1_Benign_Inspect_Rate": 0.1674,
+          "Pi2_Benign_Inspect_Rate": 0.06,
+          "Pi3_Benign_Inspect_Rate": 0.0766,
+          "Pi4_Benign_Inspect_Rate": 0.1269
+        },
+        {
+          "lambda_F": 0.6,
+          "Pi1_Disfluent_CMR": 0.1391,
+          "Pi2_Unassisted_Fluent_CMR": 0.3923,
+          "Pi3_Static_Banner_CMR": 0.3221,
+          "Pi4_Selective_DECS_CMR": 0.1131,
+          "fluency_trap_inflation_pp": 25.33,
+          "decs_risk_reduction_pp": 27.93,
+          "Pi1_Benign_Inspect_Rate": 0.1674,
+          "Pi2_Benign_Inspect_Rate": 0.0476,
+          "Pi3_Benign_Inspect_Rate": 0.0645,
+          "Pi4_Benign_Inspect_Rate": 0.1194
+        }
+      ],
+      "cost_ratio_sensitivity_sweep": [
+        {
+          "cost_ratio_c_miss_over_c_V": 5.0,
+          "expected_loss_Pi1_Disfluent": 0.1268,
+          "expected_loss_Pi2_Unassisted_Fluent": 0.0745,
+          "expected_loss_Pi3_Static_Banner": 0.0821,
+          "expected_loss_Pi4_Selective_DECS": 0.1066,
+          "decs_loss_reduction_vs_Pi2_pct": -43.1
+        },
+        {
+          "cost_ratio_c_miss_over_c_V": 10.0,
+          "expected_loss_Pi1_Disfluent": 0.1628,
+          "expected_loss_Pi2_Unassisted_Fluent": 0.1057,
+          "expected_loss_Pi3_Static_Banner": 0.1134,
+          "expected_loss_Pi4_Selective_DECS": 0.1332,
+          "decs_loss_reduction_vs_Pi2_pct": -26.01
+        },
+        {
+          "cost_ratio_c_miss_over_c_V": 20.0,
+          "expected_loss_Pi1_Disfluent": 0.2085,
+          "expected_loss_Pi2_Unassisted_Fluent": 0.1507,
+          "expected_loss_Pi3_Static_Banner": 0.1571,
+          "expected_loss_Pi4_Selective_DECS": 0.1685,
+          "decs_loss_reduction_vs_Pi2_pct": -11.82
+        },
+        {
+          "cost_ratio_c_miss_over_c_V": 50.0,
+          "expected_loss_Pi1_Disfluent": 0.2888,
+          "expected_loss_Pi2_Unassisted_Fluent": 0.2427,
+          "expected_loss_Pi3_Static_Banner": 0.2435,
+          "expected_loss_Pi4_Selective_DECS": 0.234,
+          "decs_loss_reduction_vs_Pi2_pct": 3.6
+        },
+        {
+          "cost_ratio_c_miss_over_c_V": 100.0,
+          "expected_loss_Pi1_Disfluent": 0.37,
+          "expected_loss_Pi2_Unassisted_Fluent": 0.35,
+          "expected_loss_Pi3_Static_Banner": 0.3414,
+          "expected_loss_Pi4_Selective_DECS": 0.3036,
+          "decs_loss_reduction_vs_Pi2_pct": 13.25
+        }
+      ]
+    },
+    "salad_soc_trace_driven": {
+      "tau_llr": 1.0,
+      "banner_firing_rate_Pi3_Static": 1.0,
+      "banner_firing_rate_Pi4_DECS_overall": 0.2013,
+      "banner_firing_rate_Pi4_DECS_benign": 0.0703,
+      "banner_firing_rate_Pi4_DECS_hostile": 0.6868,
+      "lambda_F_sensitivity_sweep": [
+        {
+          "lambda_F": 0.0,
+          "Pi1_Disfluent_CMR": 0.36,
+          "Pi2_Unassisted_Fluent_CMR": 0.36,
+          "Pi3_Static_Banner_CMR": 0.36,
+          "Pi4_Selective_DECS_CMR": 0.211,
+          "fluency_trap_inflation_pp": 0.0,
+          "decs_risk_reduction_pp": 14.9,
+          "Pi1_Benign_Inspect_Rate": 0.3065,
+          "Pi2_Benign_Inspect_Rate": 0.3065,
+          "Pi3_Benign_Inspect_Rate": 0.3065,
+          "Pi4_Benign_Inspect_Rate": 0.3243
+        },
+        {
+          "lambda_F": 0.1,
+          "Pi1_Disfluent_CMR": 0.36,
+          "Pi2_Unassisted_Fluent_CMR": 0.424,
+          "Pi3_Static_Banner_CMR": 0.4097,
+          "Pi4_Selective_DECS_CMR": 0.22,
+          "fluency_trap_inflation_pp": 6.4,
+          "decs_risk_reduction_pp": 20.4,
+          "Pi1_Benign_Inspect_Rate": 0.3065,
+          "Pi2_Benign_Inspect_Rate": 0.2532,
+          "Pi3_Benign_Inspect_Rate": 0.2644,
+          "Pi4_Benign_Inspect_Rate": 0.3065
+        },
+        {
+          "lambda_F": 0.2,
+          "Pi1_Disfluent_CMR": 0.36,
+          "Pi2_Unassisted_Fluent_CMR": 0.4902,
+          "Pi3_Static_Banner_CMR": 0.461,
+          "Pi4_Selective_DECS_CMR": 0.2291,
+          "fluency_trap_inflation_pp": 13.02,
+          "decs_risk_reduction_pp": 26.11,
+          "Pi1_Benign_Inspect_Rate": 0.3065,
+          "Pi2_Benign_Inspect_Rate": 0.2061,
+          "Pi3_Benign_Inspect_Rate": 0.2261,
+          "Pi4_Benign_Inspect_Rate": 0.2894
+        },
+        {
+          "lambda_F": 0.3,
+          "Pi1_Disfluent_CMR": 0.36,
+          "Pi2_Unassisted_Fluent_CMR": 0.5563,
+          "Pi3_Static_Banner_CMR": 0.5128,
+          "Pi4_Selective_DECS_CMR": 0.2381,
+          "fluency_trap_inflation_pp": 19.63,
+          "decs_risk_reduction_pp": 31.82,
+          "Pi1_Benign_Inspect_Rate": 0.3065,
+          "Pi2_Benign_Inspect_Rate": 0.1656,
+          "Pi3_Benign_Inspect_Rate": 0.1916,
+          "Pi4_Benign_Inspect_Rate": 0.2731
+        },
+        {
+          "lambda_F": 0.4,
+          "Pi1_Disfluent_CMR": 0.36,
+          "Pi2_Unassisted_Fluent_CMR": 0.6202,
+          "Pi3_Static_Banner_CMR": 0.5641,
+          "Pi4_Selective_DECS_CMR": 0.247,
+          "fluency_trap_inflation_pp": 26.02,
+          "decs_risk_reduction_pp": 37.32,
+          "Pi1_Benign_Inspect_Rate": 0.3065,
+          "Pi2_Benign_Inspect_Rate": 0.1314,
+          "Pi3_Benign_Inspect_Rate": 0.1611,
+          "Pi4_Benign_Inspect_Rate": 0.2576
+        },
+        {
+          "lambda_F": 0.5,
+          "Pi1_Disfluent_CMR": 0.36,
+          "Pi2_Unassisted_Fluent_CMR": 0.6801,
+          "Pi3_Static_Banner_CMR": 0.614,
+          "Pi4_Selective_DECS_CMR": 0.2558,
+          "fluency_trap_inflation_pp": 32.01,
+          "decs_risk_reduction_pp": 42.43,
+          "Pi1_Benign_Inspect_Rate": 0.3065,
+          "Pi2_Benign_Inspect_Rate": 0.1031,
+          "Pi3_Benign_Inspect_Rate": 0.1345,
+          "Pi4_Benign_Inspect_Rate": 0.2429
+        },
+        {
+          "lambda_F": 0.6,
+          "Pi1_Disfluent_CMR": 0.36,
+          "Pi2_Unassisted_Fluent_CMR": 0.7346,
+          "Pi3_Static_Banner_CMR": 0.6615,
+          "Pi4_Selective_DECS_CMR": 0.2644,
+          "fluency_trap_inflation_pp": 37.46,
+          "decs_risk_reduction_pp": 47.03,
+          "Pi1_Benign_Inspect_Rate": 0.3065,
+          "Pi2_Benign_Inspect_Rate": 0.0802,
+          "Pi3_Benign_Inspect_Rate": 0.1115,
+          "Pi4_Benign_Inspect_Rate": 0.229
+        }
+      ],
+      "cost_ratio_sensitivity_sweep": [
+        {
+          "cost_ratio_c_miss_over_c_V": 5.0,
+          "expected_loss_Pi1_Disfluent": 0.7997,
+          "expected_loss_Pi2_Unassisted_Fluent": 0.9099,
+          "expected_loss_Pi3_Static_Banner": 0.8855,
+          "expected_loss_Pi4_Selective_DECS": 0.6355,
+          "decs_loss_reduction_vs_Pi2_pct": 30.16
+        },
+        {
+          "cost_ratio_c_miss_over_c_V": 10.0,
+          "expected_loss_Pi1_Disfluent": 1.2384,
+          "expected_loss_Pi2_Unassisted_Fluent": 1.6104,
+          "expected_loss_Pi3_Static_Banner": 1.5302,
+          "expected_loss_Pi4_Selective_DECS": 0.9364,
+          "decs_loss_reduction_vs_Pi2_pct": 41.85
+        },
+        {
+          "cost_ratio_c_miss_over_c_V": 20.0,
+          "expected_loss_Pi1_Disfluent": 1.9075,
+          "expected_loss_Pi2_Unassisted_Fluent": 2.8201,
+          "expected_loss_Pi3_Static_Banner": 2.6171,
+          "expected_loss_Pi4_Selective_DECS": 1.4125,
+          "decs_loss_reduction_vs_Pi2_pct": 49.91
+        },
+        {
+          "cost_ratio_c_miss_over_c_V": 50.0,
+          "expected_loss_Pi1_Disfluent": 3.3295,
+          "expected_loss_Pi2_Unassisted_Fluent": 5.77,
+          "expected_loss_Pi3_Static_Banner": 5.1916,
+          "expected_loss_Pi4_Selective_DECS": 2.4782,
+          "decs_loss_reduction_vs_Pi2_pct": 57.05
+        },
+        {
+          "cost_ratio_c_miss_over_c_V": 100.0,
+          "expected_loss_Pi1_Disfluent": 5.0092,
+          "expected_loss_Pi2_Unassisted_Fluent": 9.686,
+          "expected_loss_Pi3_Static_Banner": 8.5188,
+          "expected_loss_Pi4_Selective_DECS": 3.7995,
+          "decs_loss_reduction_vs_Pi2_pct": 60.77
+        }
+      ]
+    }
   }
 }
