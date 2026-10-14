@@ -1,0 +1,39 @@
+benchmark_path: "configs/soc_itpi_24_benchmark.json"
+likelihoods_path: "configs/pitsa_empirical_likelihoods.json"
+results_dir: "results"
+
+seeds:
+  study1_primary: 20261014
+  study1_sensitivity:
+    - 20261014
+    - 20261015
+    - 20261016
+    - 20261017
+    - 20261018
+  study1b_ablation: 20261015
+  stress_test: 20261014
+  bootstrap_mediation: 20261014
+
+pitsa_parameters:
+  tau_llr: 0.50
+  mu_0: 0.45
+  gamma: 1.35
+  epsilon: 0.0001
+  canonical_order:
+    - "integrity_level"
+    - "parent_child_pair"
+    - "unsigned_binary_hash"
+    - "external_dest_port"
+    - "scheduled_task_mutation"
+
+study1_design:
+  analysts_per_condition: 40
+  total_analysts: 160
+  trials_per_analyst: 24
+  bootstrap_resamples: 5000
+  tost_equivalence_bound: 0.05
+
+study1b_design:
+  analysts_per_arm: 30
+  total_analysts: 120
+  trials_per_analyst: 12
