@@ -1,28 +1,8 @@
-# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-*$py.class
-
-# Virtual environments
-.venv/
-venv/
-env/
-
-# Test and linter caches
 .pytest_cache/
-.mypy_cache/
-.ruff_cache/
-
-# OS and editor metadata
 .DS_Store
-.idea/
-.vscode/
-
-# Generated tabular trace exports and local raw dataset extracts
-*.csv
-*.tsv
-*.parquet
-*.zip
-*.rar
-data/raw/
-outputs/
+.env
+.env.*
+data/
+*.log

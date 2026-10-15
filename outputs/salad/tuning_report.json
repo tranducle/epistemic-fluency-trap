@@ -1,0 +1,149 @@
+{
+  "CharacterNgramLogistic": {
+    "selected_alpha": 1e-05,
+    "threshold": 0.605821020881617,
+    "validation_metrics": {
+      "auprc": 0.7641437888266784,
+      "auroc": 0.9425001279526278,
+      "balanced_accuracy": 0.8615436471582775,
+      "f1": 0.7650878882605818,
+      "fn": 17448,
+      "fp": 26213,
+      "fpr": 0.07986703553843903,
+      "negative_rows": 328208,
+      "positive_rows": 88548,
+      "precision": 0.7306320840997605,
+      "recall": 0.8029543298549939,
+      "specificity": 0.920132964461561,
+      "threshold": 0.605821020881617,
+      "tn": 301995,
+      "tp": 71100
+    }
+  },
+  "JointNaiveBayes": {
+    "selected_alpha": 0.1,
+    "threshold": 0.3556367631667053,
+    "validation_metrics": {
+      "auprc": 0.7786743244172921,
+      "auroc": 0.937183413556601,
+      "balanced_accuracy": 0.8669490675150453,
+      "f1": 0.7578155936457,
+      "fn": 14869,
+      "fp": 32224,
+      "fpr": 0.09818164091064203,
+      "negative_rows": 328208,
+      "positive_rows": 88548,
+      "precision": 0.695721556518701,
+      "recall": 0.8320797759407327,
+      "specificity": 0.9018183590893579,
+      "threshold": 0.3556367631667053,
+      "tn": 295984,
+      "tp": 73679
+    }
+  },
+  "JointWordLogistic": {
+    "selected_alpha": 1e-05,
+    "threshold": 0.7034240390488058,
+    "validation_metrics": {
+      "auprc": 0.8341498432528015,
+      "auroc": 0.9524353659489947,
+      "balanced_accuracy": 0.8713926269471033,
+      "f1": 0.7816269701803239,
+      "fn": 16269,
+      "fp": 24118,
+      "fpr": 0.07348388826597767,
+      "negative_rows": 328208,
+      "positive_rows": 88548,
+      "precision": 0.7498054918721537,
+      "recall": 0.8162691421601843,
+      "specificity": 0.9265161117340224,
+      "threshold": 0.7034240390488058,
+      "tn": 304090,
+      "tp": 72279
+    }
+  },
+  "PITSA_BudgetMatched": {
+    "selected_alpha": 0.25,
+    "threshold": 0.6776639100529169,
+    "validation_metrics": {
+      "auprc": 0.7813919426305053,
+      "auroc": 0.9381937871315665,
+      "balanced_accuracy": 0.8643181037195061,
+      "f1": 0.7553857275637715,
+      "fn": 15404,
+      "fp": 31968,
+      "fpr": 0.09740164773558231,
+      "negative_rows": 328208,
+      "positive_rows": 88548,
+      "precision": 0.6958672653931045,
+      "recall": 0.8260378551745946,
+      "specificity": 0.9025983522644176,
+      "threshold": 0.6776639100529169,
+      "tn": 296240,
+      "tp": 73144
+    }
+  },
+  "PITSA_FullTrain": {
+    "selected_alpha": 0.25,
+    "threshold": 0.7191718805389977,
+    "validation_metrics": {
+      "auprc": 0.7887695041456083,
+      "auroc": 0.9401862436642869,
+      "balanced_accuracy": 0.8643450783128083,
+      "f1": 0.755446766539115,
+      "fn": 15403,
+      "fp": 31954,
+      "fpr": 0.09735899185882124,
+      "negative_rows": 328208,
+      "positive_rows": 88548,
+      "precision": 0.6959628540709236,
+      "recall": 0.8260491484844378,
+      "specificity": 0.9026410081411788,
+      "threshold": 0.7191718805389977,
+      "tn": 296254,
+      "tp": 73145
+    }
+  },
+  "StructuralLogistic": {
+    "selected_alpha": 1e-05,
+    "threshold": 0.6815319213165008,
+    "validation_metrics": {
+      "auprc": 0.8385437851899149,
+      "auroc": 0.9528774781018026,
+      "balanced_accuracy": 0.8760940133090409,
+      "f1": 0.782652155188456,
+      "fn": 14947,
+      "fp": 25932,
+      "fpr": 0.0790108711548774,
+      "negative_rows": 328208,
+      "positive_rows": 88548,
+      "precision": 0.7394632935810234,
+      "recall": 0.8311988977729593,
+      "specificity": 0.9209891288451226,
+      "threshold": 0.6815319213165008,
+      "tn": 302276,
+      "tp": 73601
+    }
+  },
+  "StructuralRandomForest": {
+    "selected_max_depth": 16,
+    "threshold": 0.684596657623616,
+    "validation_metrics": {
+      "auprc": 0.863557606422919,
+      "auroc": 0.9634908379636674,
+      "balanced_accuracy": 0.886112002547429,
+      "f1": 0.797922000500338,
+      "fn": 13594,
+      "fp": 24371,
+      "fpr": 0.07425474089601716,
+      "negative_rows": 328208,
+      "positive_rows": 88548,
+      "precision": 0.7546337780015102,
+      "recall": 0.846478745990875,
+      "specificity": 0.9257452591039829,
+      "threshold": 0.684596657623616,
+      "tn": 303837,
+      "tp": 74954
+    }
+  }
+}

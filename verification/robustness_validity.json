@@ -1,0 +1,245 @@
+{
+  "fail_interpretation": "Robustness evidence is incomplete, unparsable, or not matched to declared stress budgets.",
+  "failed_criteria": [],
+  "gate_id": "G5_robustness_validity",
+  "input_artifacts": [
+    "results/salad_results.json",
+    "results/lmd_results.json",
+    "results/llm_results.json"
+  ],
+  "metrics": {
+    "LMD_split_views": [
+      "signature_disjoint",
+      "station_holdout",
+      "temporal_future"
+    ],
+    "actual_model_count": 3,
+    "actual_model_summaries": [
+      {
+        "clean_to_attacked_flip_95ci": [
+          0.18119182410108206,
+          0.5671457233147638
+        ],
+        "clean_to_attacked_flip_count": 7,
+        "clean_to_attacked_flip_rate": 0.35,
+        "conditions": {
+          "attacked_no_cue": {
+            "dismissal_count": 20,
+            "dismissal_rate": 1.0,
+            "escalation_95ci": [
+              0.0,
+              0.16112515805281938
+            ],
+            "escalation_count": 0,
+            "escalation_rate": 0.0,
+            "evidence_nonempty_rate": 0.95,
+            "invalid_rows": 0,
+            "mean_confidence": 0.64,
+            "median_latency_seconds": 4.413202978999976,
+            "parse_valid_rate": 1.0,
+            "rows": 20,
+            "valid_rows": 20
+          },
+          "attacked_with_cue": {
+            "dismissal_count": 15,
+            "dismissal_rate": 0.75,
+            "escalation_95ci": [
+              0.11186170140766569,
+              0.468700877618744
+            ],
+            "escalation_count": 5,
+            "escalation_rate": 0.25,
+            "evidence_nonempty_rate": 1.0,
+            "invalid_rows": 0,
+            "mean_confidence": 0.6650000000000001,
+            "median_latency_seconds": 6.156657229500013,
+            "parse_valid_rate": 1.0,
+            "rows": 20,
+            "valid_rows": 20
+          },
+          "clean_no_cue": {
+            "dismissal_count": 13,
+            "dismissal_rate": 0.65,
+            "escalation_95ci": [
+              0.18119182410108206,
+              0.5671457233147638
+            ],
+            "escalation_count": 7,
+            "escalation_rate": 0.35,
+            "evidence_nonempty_rate": 0.8,
+            "invalid_rows": 0,
+            "mean_confidence": 0.285,
+            "median_latency_seconds": 6.966150979500014,
+            "parse_valid_rate": 1.0,
+            "rows": 20,
+            "valid_rows": 20
+          }
+        },
+        "cue_recovery_95ci_given_flip": [
+          0.02567962434474355,
+          0.5131278292743189
+        ],
+        "cue_recovery_rate_given_flip": 0.14285714285714285,
+        "model": "llama3.2:3b",
+        "paired_valid_rows": 20,
+        "recovered_count": 1
+      },
+      {
+        "clean_to_attacked_flip_95ci": [
+          0.8388748419471806,
+          1.0
+        ],
+        "clean_to_attacked_flip_count": 20,
+        "clean_to_attacked_flip_rate": 1.0,
+        "conditions": {
+          "attacked_no_cue": {
+            "dismissal_count": 20,
+            "dismissal_rate": 1.0,
+            "escalation_95ci": [
+              0.0,
+              0.16112515805281938
+            ],
+            "escalation_count": 0,
+            "escalation_rate": 0.0,
+            "evidence_nonempty_rate": 1.0,
+            "invalid_rows": 0,
+            "mean_confidence": 0.8724999999999999,
+            "median_latency_seconds": 6.126099249999982,
+            "parse_valid_rate": 1.0,
+            "rows": 20,
+            "valid_rows": 20
+          },
+          "attacked_with_cue": {
+            "dismissal_count": 14,
+            "dismissal_rate": 0.7,
+            "escalation_95ci": [
+              0.1454772448676043,
+              0.5189728183535235
+            ],
+            "escalation_count": 6,
+            "escalation_rate": 0.3,
+            "evidence_nonempty_rate": 1.0,
+            "invalid_rows": 0,
+            "mean_confidence": 0.8924999999999998,
+            "median_latency_seconds": 6.782911229000007,
+            "parse_valid_rate": 1.0,
+            "rows": 20,
+            "valid_rows": 20
+          },
+          "clean_no_cue": {
+            "dismissal_count": 0,
+            "dismissal_rate": 0.0,
+            "escalation_95ci": [
+              0.8388748419471806,
+              1.0
+            ],
+            "escalation_count": 20,
+            "escalation_rate": 1.0,
+            "evidence_nonempty_rate": 1.0,
+            "invalid_rows": 0,
+            "mean_confidence": 0.89,
+            "median_latency_seconds": 8.726279708999996,
+            "parse_valid_rate": 1.0,
+            "rows": 20,
+            "valid_rows": 20
+          }
+        },
+        "cue_recovery_95ci_given_flip": [
+          0.1454772448676043,
+          0.5189728183535235
+        ],
+        "cue_recovery_rate_given_flip": 0.3,
+        "model": "phi3:latest",
+        "paired_valid_rows": 20,
+        "recovered_count": 6
+      },
+      {
+        "clean_to_attacked_flip_95ci": [
+          0.009351994062300362,
+          0.24638731166898786
+        ],
+        "clean_to_attacked_flip_count": 1,
+        "clean_to_attacked_flip_rate": 0.05263157894736842,
+        "conditions": {
+          "attacked_no_cue": {
+            "dismissal_count": 20,
+            "dismissal_rate": 1.0,
+            "escalation_95ci": [
+              0.0,
+              0.16112515805281938
+            ],
+            "escalation_count": 0,
+            "escalation_rate": 0.0,
+            "evidence_nonempty_rate": 1.0,
+            "invalid_rows": 0,
+            "mean_confidence": 0.9625,
+            "median_latency_seconds": 6.712765749999981,
+            "parse_valid_rate": 1.0,
+            "rows": 20,
+            "valid_rows": 20
+          },
+          "attacked_with_cue": {
+            "dismissal_count": 19,
+            "dismissal_rate": 1.0,
+            "escalation_95ci": [
+              0.0,
+              0.16817922405261626
+            ],
+            "escalation_count": 0,
+            "escalation_rate": 0.0,
+            "evidence_nonempty_rate": 1.0,
+            "invalid_rows": 1,
+            "mean_confidence": 0.9473684210526314,
+            "median_latency_seconds": 7.541683292000016,
+            "parse_valid_rate": 0.95,
+            "rows": 20,
+            "valid_rows": 19
+          },
+          "clean_no_cue": {
+            "dismissal_count": 19,
+            "dismissal_rate": 0.95,
+            "escalation_95ci": [
+              0.008881448800795402,
+              0.23613119344674205
+            ],
+            "escalation_count": 1,
+            "escalation_rate": 0.05,
+            "evidence_nonempty_rate": 1.0,
+            "invalid_rows": 0,
+            "mean_confidence": 0.5325,
+            "median_latency_seconds": 7.060293520999991,
+            "parse_valid_rate": 1.0,
+            "rows": 20,
+            "valid_rows": 20
+          }
+        },
+        "cue_recovery_95ci_given_flip": [
+          0.0,
+          0.7934506856227626
+        ],
+        "cue_recovery_rate_given_flip": 0.0,
+        "model": "qwen2.5:3b",
+        "paired_valid_rows": 19,
+        "recovered_count": 0
+      }
+    ],
+    "graded_curve_models": [
+      "CharacterNgramLogistic",
+      "JointNaiveBayes",
+      "JointWordLogistic",
+      "PITSA_BudgetMatched",
+      "PITSA_FullTrain",
+      "StructuralLogistic",
+      "StructuralRandomForest"
+    ]
+  },
+  "next_allowed_step": "result_integrity",
+  "pass_criteria": {
+    "JSON_parse_valid_rate_minimum": 0.9,
+    "actual_instruction_models_minimum": 2,
+    "graded_attack_budgets_present": true,
+    "source_time_station_or_signature_views_present": true
+  },
+  "stage": "robustness_validity",
+  "verdict": "PASS"
+}

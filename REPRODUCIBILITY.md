@@ -1,29 +1,45 @@
-# Reproducibility Guide (`REPRODUCIBILITY.md`)
+# Reproducibility
 
-## 1. Environment Setup
+The repository separates evidence verification from full raw-data recomputation.
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
+## Environment
 
-## 2. Automated Verification (`pytest`)
+Use Python 3.9 with the package versions in `requirements.txt`. The recorded local environment and model runtime are in `manifests/environment.json`, `manifests/hardware.json`, and `manifests/models.json`.
 
-To verify mathematical text-channel invariance (`Proposition 1`), `DCEDM` risk ordering (`Theorem 1`), and exact numerical consistency with `results/statistical_results_summary.json`:
+## Automated tests
 
 ```bash
-pytest -v
-python3 experiments/run_experiments.py
-python3 experiments/ablation_study.py
+PYTHONPATH=src python -m pytest -q tests
 ```
 
-## 3. Full End-to-End Multi-Corpus Re-Execution (`2,238,434` Records)
-
-When the four public raw datasets (`OTRF Security-Datasets`, `SALAD-SOC`, `LMD-2023`, and `CISA KEV`) are placed under `datasets/raw/`, execute:
+## Verify released checksums
 
 ```bash
-python3 experiments/run_all_isj_experiments.py
+shasum -a 256 -c RELEASE_SHA256.txt
 ```
 
-Total single-CPU runtime is approximately `44 seconds` (random seed `20261014`).
+## Inspect locked evidence
+
+Actual instruction-model responses and conditioned scenarios are under `outputs/llm/`. Aggregate metrics and statistical summaries are under `results/`. Row-level split manifests and prediction arrays are regenerated from the source datasets and are not committed to the public branch.
+
+The records under `verification/` document provenance, split integrity, baseline sanity, method mechanism, ablations, robustness, and result integrity.
+
+## Full raw-data execution
+
+After acquiring the source datasets described in `DATA.md`, place them under `data/` and run the required stage:
+
+```bash
+python experiments/run_pipeline.py splits
+python experiments/run_pipeline.py salad
+python experiments/run_pipeline.py lmd
+python experiments/run_pipeline.py stimuli
+python experiments/run_pipeline.py governance
+```
+
+The instruction-model stage also requires Ollama and the exact model versions listed in `manifests/models.json`:
+
+```bash
+python experiments/run_pipeline.py llm
+```
+
+Full recomputation can be resource intensive because the raw SALAD-SOC and LMD files are large. The included aggregate result files and verification records support claim auditing, while full row-level regeneration requires the source datasets.

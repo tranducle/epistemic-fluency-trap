@@ -1,0 +1,159 @@
+{
+  "fail_interpretation": "Training and testing would not be isolated under the declared evaluation role.",
+  "failed_criteria": [],
+  "gate_id": "G1_preprocessing_integrity",
+  "input_artifacts": [
+    {
+      "test": "manifests/salad_test_ids.csv",
+      "train": "manifests/salad_train_ids.csv",
+      "validation": "manifests/salad_validation_ids.csv"
+    },
+    {
+      "signature_disjoint": "manifests/lmd_signature_disjoint_manifest.csv",
+      "station_holdout": "manifests/lmd_station_holdout_manifest.csv",
+      "temporal_future": "manifests/lmd_temporal_future_manifest.csv"
+    }
+  ],
+  "metrics": {
+    "lmd": {
+      "claim_boundary": "Signature, time, and station splits license their named evaluation only.",
+      "dataset": "LMD_2023",
+      "label_semantics": {
+        "0": "Normal",
+        "1": "EoRS",
+        "2": "EoHT"
+      },
+      "split_reports": {
+        "signature_disjoint": {
+          "group_overlap": {
+            "train_test": 0,
+            "train_validation": 0,
+            "validation_test": 0
+          },
+          "grouping": "core_signature",
+          "manifest_file": "manifests/lmd_signature_disjoint_manifest.csv",
+          "positive_rows": {
+            "test": 6799,
+            "train": 145628,
+            "validation": 13866
+          },
+          "record_id_overlap": {
+            "train_test": 0,
+            "train_validation": 0,
+            "validation_test": 0
+          },
+          "rows": {
+            "test": 183157,
+            "train": 1571665,
+            "validation": 23108
+          },
+          "verdict": "PASS"
+        },
+        "station_holdout": {
+          "group_overlap": {
+            "train_test": 0,
+            "train_validation": 0,
+            "validation_test": 0
+          },
+          "grouping": "context_station",
+          "manifest_file": "manifests/lmd_station_holdout_manifest.csv",
+          "positive_rows": {
+            "test": 43458,
+            "train": 75866,
+            "validation": 46969
+          },
+          "record_id_overlap": {
+            "train_test": 0,
+            "train_validation": 0,
+            "validation_test": 0
+          },
+          "rows": {
+            "test": 71086,
+            "train": 1610265,
+            "validation": 96579
+          },
+          "verdict": "PASS"
+        },
+        "temporal_future": {
+          "group_overlap": {
+            "train_test": 0,
+            "train_validation": 0,
+            "validation_test": 0
+          },
+          "grouping": "context_year",
+          "manifest_file": "manifests/lmd_temporal_future_manifest.csv",
+          "positive_rows": {
+            "test": 2776,
+            "train": 115725,
+            "validation": 47792
+          },
+          "record_id_overlap": {
+            "train_test": 0,
+            "train_validation": 0,
+            "validation_test": 0
+          },
+          "rows": {
+            "test": 14121,
+            "train": 143353,
+            "validation": 1620456
+          },
+          "verdict": "PASS"
+        }
+      },
+      "verdict": "PASS"
+    },
+    "salad": {
+      "claim_boundary": "This gate licenses official split evaluation, not temporal or cross-source generalization.",
+      "cross_split_id_overlap": {
+        "train_test": 0,
+        "train_validation": 0,
+        "validation_test": 0
+      },
+      "dataset": "SALAD_SOC",
+      "manifest_files": {
+        "test": "manifests/salad_test_ids.csv",
+        "train": "manifests/salad_train_ids.csv",
+        "validation": "manifests/salad_validation_ids.csv"
+      },
+      "protocol": "official train, validation, and test files",
+      "splits": {
+        "test": {
+          "duplicate_ids": 0,
+          "label_counts": {
+            "0": 328211,
+            "1": 88570
+          },
+          "rows": 416781,
+          "unique_ids": 416781
+        },
+        "train": {
+          "duplicate_ids": 0,
+          "label_counts": {
+            "0": 1531638,
+            "1": 413249
+          },
+          "rows": 1944887,
+          "unique_ids": 1944887
+        },
+        "validation": {
+          "duplicate_ids": 0,
+          "label_counts": {
+            "0": 328208,
+            "1": 88548
+          },
+          "rows": 416756,
+          "unique_ids": 416756
+        }
+      },
+      "verdict": "PASS"
+    }
+  },
+  "next_allowed_step": "baseline_training",
+  "pass_criteria": {
+    "declared_group_overlap": 0,
+    "label_diversity": "both classes appear in each evaluated partition",
+    "record_id_overlap": 0
+  },
+  "stage": "preprocessing_integrity",
+  "verdict": "PASS"
+}

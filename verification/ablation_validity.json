@@ -1,0 +1,44 @@
+{
+  "fail_interpretation": "The ablation set is missing, degenerate, or changes more than the named mechanism.",
+  "failed_criteria": [],
+  "gate_id": "G4_ablation_validity",
+  "input_artifacts": [
+    "results/ablation_results.csv"
+  ],
+  "metrics": {
+    "configurations": [
+      "Drop_p1_process_events",
+      "Drop_p2_registry_file",
+      "Drop_p3_network_pipe",
+      "Drop_p4_destination_service",
+      "Drop_s1_proto_ports",
+      "Drop_s2_flow_volume",
+      "Drop_s3_duration_segment",
+      "Drop_s4_burst",
+      "Drop_s5_network_scope",
+      "Full",
+      "Only_p1_process_events",
+      "Only_p2_registry_file",
+      "Only_p3_network_pipe",
+      "Only_p4_destination_service",
+      "Only_s1_proto_ports",
+      "Only_s2_flow_volume",
+      "Only_s3_duration_segment",
+      "Only_s4_burst",
+      "Only_s5_network_scope"
+    ],
+    "datasets": [
+      "LMD_2023",
+      "SALAD_SOC"
+    ],
+    "rows": 20
+  },
+  "next_allowed_step": "robustness_validity",
+  "pass_criteria": {
+    "at_least_one_metric_changes": true,
+    "full_and_drop_configurations_present": true,
+    "same_declared_split_and_tuning_rule": true
+  },
+  "stage": "ablation_validity",
+  "verdict": "PASS"
+}

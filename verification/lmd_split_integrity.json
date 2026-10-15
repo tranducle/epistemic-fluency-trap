@@ -1,0 +1,87 @@
+{
+  "claim_boundary": "Signature, time, and station splits license their named evaluation only.",
+  "dataset": "LMD_2023",
+  "label_semantics": {
+    "0": "Normal",
+    "1": "EoRS",
+    "2": "EoHT"
+  },
+  "split_reports": {
+    "signature_disjoint": {
+      "group_overlap": {
+        "train_test": 0,
+        "train_validation": 0,
+        "validation_test": 0
+      },
+      "grouping": "core_signature",
+      "manifest_file": "manifests/lmd_signature_disjoint_manifest.csv",
+      "positive_rows": {
+        "test": 6799,
+        "train": 145628,
+        "validation": 13866
+      },
+      "record_id_overlap": {
+        "train_test": 0,
+        "train_validation": 0,
+        "validation_test": 0
+      },
+      "rows": {
+        "test": 183157,
+        "train": 1571665,
+        "validation": 23108
+      },
+      "verdict": "PASS"
+    },
+    "station_holdout": {
+      "group_overlap": {
+        "train_test": 0,
+        "train_validation": 0,
+        "validation_test": 0
+      },
+      "grouping": "context_station",
+      "manifest_file": "manifests/lmd_station_holdout_manifest.csv",
+      "positive_rows": {
+        "test": 43458,
+        "train": 75866,
+        "validation": 46969
+      },
+      "record_id_overlap": {
+        "train_test": 0,
+        "train_validation": 0,
+        "validation_test": 0
+      },
+      "rows": {
+        "test": 71086,
+        "train": 1610265,
+        "validation": 96579
+      },
+      "verdict": "PASS"
+    },
+    "temporal_future": {
+      "group_overlap": {
+        "train_test": 0,
+        "train_validation": 0,
+        "validation_test": 0
+      },
+      "grouping": "context_year",
+      "manifest_file": "manifests/lmd_temporal_future_manifest.csv",
+      "positive_rows": {
+        "test": 2776,
+        "train": 115725,
+        "validation": 47792
+      },
+      "record_id_overlap": {
+        "train_test": 0,
+        "train_validation": 0,
+        "validation_test": 0
+      },
+      "rows": {
+        "test": 14121,
+        "train": 143353,
+        "validation": 1620456
+      },
+      "verdict": "PASS"
+    }
+  },
+  "verdict": "PASS"
+}

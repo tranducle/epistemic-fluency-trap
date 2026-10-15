@@ -1,0 +1,32 @@
+{
+  "fail_interpretation": "A table or claim would depend on a missing, nonfinite, or untraceable result.",
+  "failed_criteria": [],
+  "gate_id": "G6_result_integrity",
+  "input_artifacts": [
+    "results/salad_metrics_long.csv",
+    "results/lmd_metrics_long.csv",
+    "results/ablation_results.csv",
+    "results/llm_results_long.csv",
+    "results/governance_loss_sensitivity.csv",
+    "outputs/salad/primary_predictions.npz",
+    "outputs/lmd/signature_disjoint_primary_predictions.npz"
+  ],
+  "metrics": {
+    "prediction_files_present": true,
+    "result_rows": {
+      "ablation_results.csv": 20,
+      "governance_loss_sensitivity.csv": 126,
+      "llm_results_long.csv": 180,
+      "lmd_metrics_long.csv": 39,
+      "salad_metrics_long.csv": 30
+    }
+  },
+  "next_allowed_step": "visual_evidence",
+  "pass_criteria": {
+    "all_declared_result_files_present": true,
+    "all_numeric_evidence_finite": true,
+    "prediction_level_provenance_present": true
+  },
+  "stage": "result_integrity",
+  "verdict": "PASS"
+}

@@ -1,0 +1,45 @@
+{
+  "claim_boundary": "This gate licenses official split evaluation, not temporal or cross-source generalization.",
+  "cross_split_id_overlap": {
+    "train_test": 0,
+    "train_validation": 0,
+    "validation_test": 0
+  },
+  "dataset": "SALAD_SOC",
+  "manifest_files": {
+    "test": "manifests/salad_test_ids.csv",
+    "train": "manifests/salad_train_ids.csv",
+    "validation": "manifests/salad_validation_ids.csv"
+  },
+  "protocol": "official train, validation, and test files",
+  "splits": {
+    "test": {
+      "duplicate_ids": 0,
+      "label_counts": {
+        "0": 328211,
+        "1": 88570
+      },
+      "rows": 416781,
+      "unique_ids": 416781
+    },
+    "train": {
+      "duplicate_ids": 0,
+      "label_counts": {
+        "0": 1531638,
+        "1": 413249
+      },
+      "rows": 1944887,
+      "unique_ids": 1944887
+    },
+    "validation": {
+      "duplicate_ids": 0,
+      "label_counts": {
+        "0": 328208,
+        "1": 88548
+      },
+      "rows": 416756,
+      "unique_ids": 416756
+    }
+  },
+  "verdict": "PASS"
+}

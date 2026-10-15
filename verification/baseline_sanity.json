@@ -1,0 +1,185 @@
+{
+  "fail_interpretation": "A model, metric, or prediction distribution is missing, degenerate, or not traceable.",
+  "failed_criteria": [],
+  "gate_id": "G2_baseline_sanity",
+  "input_artifacts": [
+    "results/salad_metrics_long.csv",
+    "results/lmd_metrics_long.csv",
+    "outputs/salad/primary_predictions.npz",
+    "outputs/lmd/signature_disjoint_primary_predictions.npz"
+  ],
+  "metrics": {
+    "lmd_rows": 39,
+    "prediction_diversity": {
+      "LMD": {
+        "ContextAugmentedLogistic_scores": {
+          "maximum": 0.9996759198695356,
+          "minimum": 0.15829463580949546,
+          "rows": 183157,
+          "standard_deviation": 0.11661744646245019,
+          "unique_values": 59
+        },
+        "ContextOnlyLogistic_scores": {
+          "maximum": 0.9994088854549757,
+          "minimum": 6.707043819555771e-05,
+          "rows": 183157,
+          "standard_deviation": 0.2581761504807059,
+          "unique_values": 16
+        },
+        "CoreLogistic_scores": {
+          "maximum": 0.9955621301829845,
+          "minimum": 0.035206424719115455,
+          "rows": 183157,
+          "standard_deviation": 0.08126017737891975,
+          "unique_values": 16
+        },
+        "CoreRandomForest_scores": {
+          "maximum": 1.0,
+          "minimum": 0.05447720585131081,
+          "rows": 183157,
+          "standard_deviation": 0.0694561038066715,
+          "unique_values": 14
+        },
+        "PITSA_Core_scores": {
+          "maximum": 9.4043669223773,
+          "minimum": -9.659470510066615,
+          "rows": 183157,
+          "standard_deviation": 1.6692573548850849,
+          "unique_values": 16
+        }
+      },
+      "SALAD": {
+        "CharacterNgramLogistic_attack_scores": {
+          "maximum": 0.9994536376838349,
+          "minimum": 0.0003242276561035134,
+          "rows": 416781,
+          "standard_deviation": 0.33526578597676937,
+          "unique_values": 6061
+        },
+        "CharacterNgramLogistic_clean_scores": {
+          "maximum": 0.9994536376838349,
+          "minimum": 0.0003242276561035134,
+          "rows": 416781,
+          "standard_deviation": 0.34378664187051,
+          "unique_values": 2184
+        },
+        "JointNaiveBayes_attack_scores": {
+          "maximum": 0.9999999921911709,
+          "minimum": 8.678618770517665e-07,
+          "rows": 416781,
+          "standard_deviation": 0.3830688061598174,
+          "unique_values": 5128
+        },
+        "JointNaiveBayes_clean_scores": {
+          "maximum": 0.999999988839214,
+          "minimum": 8.678618770517665e-07,
+          "rows": 416781,
+          "standard_deviation": 0.322509420020554,
+          "unique_values": 2125
+        },
+        "JointWordLogistic_attack_scores": {
+          "maximum": 0.9994071069216932,
+          "minimum": 8.624182245835545e-05,
+          "rows": 416781,
+          "standard_deviation": 0.3746227839061448,
+          "unique_values": 5260
+        },
+        "JointWordLogistic_clean_scores": {
+          "maximum": 0.9996254979350806,
+          "minimum": 8.624182245835545e-05,
+          "rows": 416781,
+          "standard_deviation": 0.37098698188175144,
+          "unique_values": 2173
+        },
+        "PITSA_BudgetMatched_attack_scores": {
+          "maximum": 16.00719796407583,
+          "minimum": -11.012622066222795,
+          "rows": 416781,
+          "standard_deviation": 3.3680473419368013,
+          "unique_values": 1788
+        },
+        "PITSA_BudgetMatched_clean_scores": {
+          "maximum": 16.00719796407583,
+          "minimum": -11.012622066222795,
+          "rows": 416781,
+          "standard_deviation": 3.3680473419368013,
+          "unique_values": 1788
+        },
+        "PITSA_FullTrain_attack_scores": {
+          "maximum": 19.00819299734804,
+          "minimum": -13.948549834352653,
+          "rows": 416781,
+          "standard_deviation": 3.5627515353384784,
+          "unique_values": 1877
+        },
+        "PITSA_FullTrain_clean_scores": {
+          "maximum": 19.00819299734804,
+          "minimum": -13.948549834352653,
+          "rows": 416781,
+          "standard_deviation": 3.5627515353384784,
+          "unique_values": 1877
+        },
+        "StructuralLogistic_attack_scores": {
+          "maximum": 0.9994512057578815,
+          "minimum": 8.342852766419207e-05,
+          "rows": 416781,
+          "standard_deviation": 0.3705723770383255,
+          "unique_values": 2021
+        },
+        "StructuralLogistic_clean_scores": {
+          "maximum": 0.9994512057578815,
+          "minimum": 8.342852766419207e-05,
+          "rows": 416781,
+          "standard_deviation": 0.3705723770383255,
+          "unique_values": 2021
+        },
+        "StructuralRandomForest_attack_scores": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "rows": 416781,
+          "standard_deviation": 0.3840263651521447,
+          "unique_values": 1253
+        },
+        "StructuralRandomForest_clean_scores": {
+          "maximum": 1.0,
+          "minimum": 0.0,
+          "rows": 416781,
+          "standard_deviation": 0.3840263651521447,
+          "unique_values": 1253
+        }
+      }
+    },
+    "salad_rows": 30,
+    "stochastic_run_counts": {
+      "('LMD_2023', 'signature_disjoint', 'ContextAugmentedLogistic', 'clean')": 3,
+      "('LMD_2023', 'signature_disjoint', 'ContextOnlyLogistic', 'clean')": 3,
+      "('LMD_2023', 'signature_disjoint', 'CoreLogistic', 'clean')": 3,
+      "('LMD_2023', 'signature_disjoint', 'CoreRandomForest', 'clean')": 3,
+      "('LMD_2023', 'station_holdout', 'ContextAugmentedLogistic', 'clean')": 3,
+      "('LMD_2023', 'station_holdout', 'ContextOnlyLogistic', 'clean')": 3,
+      "('LMD_2023', 'station_holdout', 'CoreLogistic', 'clean')": 3,
+      "('LMD_2023', 'station_holdout', 'CoreRandomForest', 'clean')": 3,
+      "('LMD_2023', 'temporal_future', 'ContextAugmentedLogistic', 'clean')": 3,
+      "('LMD_2023', 'temporal_future', 'ContextOnlyLogistic', 'clean')": 3,
+      "('LMD_2023', 'temporal_future', 'CoreLogistic', 'clean')": 3,
+      "('LMD_2023', 'temporal_future', 'CoreRandomForest', 'clean')": 3,
+      "('SALAD_SOC', 'official_test', 'CharacterNgramLogistic', 'clean')": 3,
+      "('SALAD_SOC', 'official_test', 'CharacterNgramLogistic', 'full_itpi')": 3,
+      "('SALAD_SOC', 'official_test', 'JointWordLogistic', 'clean')": 3,
+      "('SALAD_SOC', 'official_test', 'JointWordLogistic', 'full_itpi')": 3,
+      "('SALAD_SOC', 'official_test', 'StructuralLogistic', 'clean')": 3,
+      "('SALAD_SOC', 'official_test', 'StructuralLogistic', 'full_itpi')": 3,
+      "('SALAD_SOC', 'official_test', 'StructuralRandomForest', 'clean')": 3,
+      "('SALAD_SOC', 'official_test', 'StructuralRandomForest', 'full_itpi')": 3
+    }
+  },
+  "next_allowed_step": "method_mechanism",
+  "pass_criteria": {
+    "numeric_metrics_finite": true,
+    "prediction_unique_values_minimum": 3,
+    "required_models_present": true,
+    "stochastic_runs_per_configuration": 3
+  },
+  "stage": "baseline_sanity",
+  "verdict": "PASS"
+}

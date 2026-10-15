@@ -1,0 +1,298 @@
+{
+  "claim_boundary": "Rates use valid structured responses. Parse validity is reported separately. Effects are specific to the evaluated local models, prompt, and conditioned OTRF scenarios.",
+  "long_results_file": "results/llm_results_long.csv",
+  "model_summaries": [
+    {
+      "clean_to_attacked_flip_95ci": [
+        0.18119182410108206,
+        0.5671457233147638
+      ],
+      "clean_to_attacked_flip_count": 7,
+      "clean_to_attacked_flip_rate": 0.35,
+      "conditions": {
+        "attacked_no_cue": {
+          "dismissal_count": 20,
+          "dismissal_rate": 1,
+          "escalation_95ci": [
+            0,
+            0.16112515805281938
+          ],
+          "escalation_count": 0,
+          "escalation_rate": 0,
+          "evidence_nonempty_rate": 0.95,
+          "invalid_rows": 0,
+          "mean_confidence": 0.64,
+          "median_latency_seconds": 4.413202978999976,
+          "parse_valid_rate": 1,
+          "rows": 20,
+          "valid_rows": 20
+        },
+        "attacked_with_cue": {
+          "dismissal_count": 15,
+          "dismissal_rate": 0.75,
+          "escalation_95ci": [
+            0.11186170140766569,
+            0.468700877618744
+          ],
+          "escalation_count": 5,
+          "escalation_rate": 0.25,
+          "evidence_nonempty_rate": 1,
+          "invalid_rows": 0,
+          "mean_confidence": 0.6650000000000001,
+          "median_latency_seconds": 6.156657229500013,
+          "parse_valid_rate": 1,
+          "rows": 20,
+          "valid_rows": 20
+        },
+        "clean_no_cue": {
+          "dismissal_count": 13,
+          "dismissal_rate": 0.65,
+          "escalation_95ci": [
+            0.18119182410108206,
+            0.5671457233147638
+          ],
+          "escalation_count": 7,
+          "escalation_rate": 0.35,
+          "evidence_nonempty_rate": 0.8,
+          "invalid_rows": 0,
+          "mean_confidence": 0.285,
+          "median_latency_seconds": 6.966150979500014,
+          "parse_valid_rate": 1,
+          "rows": 20,
+          "valid_rows": 20
+        }
+      },
+      "cue_recovery_95ci_given_flip": [
+        0.02567962434474355,
+        0.5131278292743189
+      ],
+      "cue_recovery_rate_given_flip": 0.14285714285714285,
+      "model": "llama3.2:3b",
+      "paired_valid_rows": 20,
+      "recovered_count": 1
+    },
+    {
+      "clean_to_attacked_flip_95ci": [
+        0.8388748419471806,
+        1
+      ],
+      "clean_to_attacked_flip_count": 20,
+      "clean_to_attacked_flip_rate": 1,
+      "conditions": {
+        "attacked_no_cue": {
+          "dismissal_count": 20,
+          "dismissal_rate": 1,
+          "escalation_95ci": [
+            0,
+            0.16112515805281938
+          ],
+          "escalation_count": 0,
+          "escalation_rate": 0,
+          "evidence_nonempty_rate": 1,
+          "invalid_rows": 0,
+          "mean_confidence": 0.8724999999999999,
+          "median_latency_seconds": 6.126099249999982,
+          "parse_valid_rate": 1,
+          "rows": 20,
+          "valid_rows": 20
+        },
+        "attacked_with_cue": {
+          "dismissal_count": 14,
+          "dismissal_rate": 0.7,
+          "escalation_95ci": [
+            0.1454772448676043,
+            0.5189728183535235
+          ],
+          "escalation_count": 6,
+          "escalation_rate": 0.3,
+          "evidence_nonempty_rate": 1,
+          "invalid_rows": 0,
+          "mean_confidence": 0.8924999999999998,
+          "median_latency_seconds": 6.782911229000007,
+          "parse_valid_rate": 1,
+          "rows": 20,
+          "valid_rows": 20
+        },
+        "clean_no_cue": {
+          "dismissal_count": 0,
+          "dismissal_rate": 0,
+          "escalation_95ci": [
+            0.8388748419471806,
+            1
+          ],
+          "escalation_count": 20,
+          "escalation_rate": 1,
+          "evidence_nonempty_rate": 1,
+          "invalid_rows": 0,
+          "mean_confidence": 0.89,
+          "median_latency_seconds": 8.726279708999996,
+          "parse_valid_rate": 1,
+          "rows": 20,
+          "valid_rows": 20
+        }
+      },
+      "cue_recovery_95ci_given_flip": [
+        0.1454772448676043,
+        0.5189728183535235
+      ],
+      "cue_recovery_rate_given_flip": 0.3,
+      "model": "phi3:latest",
+      "paired_valid_rows": 20,
+      "recovered_count": 6
+    },
+    {
+      "clean_to_attacked_flip_95ci": [
+        0.009351994062300362,
+        0.24638731166898786
+      ],
+      "clean_to_attacked_flip_count": 1,
+      "clean_to_attacked_flip_rate": 0.05263157894736842,
+      "conditions": {
+        "attacked_no_cue": {
+          "dismissal_count": 20,
+          "dismissal_rate": 1,
+          "escalation_95ci": [
+            0,
+            0.16112515805281938
+          ],
+          "escalation_count": 0,
+          "escalation_rate": 0,
+          "evidence_nonempty_rate": 1,
+          "invalid_rows": 0,
+          "mean_confidence": 0.9625,
+          "median_latency_seconds": 6.712765749999981,
+          "parse_valid_rate": 1,
+          "rows": 20,
+          "valid_rows": 20
+        },
+        "attacked_with_cue": {
+          "dismissal_count": 19,
+          "dismissal_rate": 1,
+          "escalation_95ci": [
+            0,
+            0.16817922405261626
+          ],
+          "escalation_count": 0,
+          "escalation_rate": 0,
+          "evidence_nonempty_rate": 1,
+          "invalid_rows": 1,
+          "mean_confidence": 0.9473684210526314,
+          "median_latency_seconds": 7.541683292000016,
+          "parse_valid_rate": 0.95,
+          "rows": 20,
+          "valid_rows": 19
+        },
+        "clean_no_cue": {
+          "dismissal_count": 19,
+          "dismissal_rate": 0.95,
+          "escalation_95ci": [
+            0.008881448800795402,
+            0.23613119344674205
+          ],
+          "escalation_count": 1,
+          "escalation_rate": 0.05,
+          "evidence_nonempty_rate": 1,
+          "invalid_rows": 0,
+          "mean_confidence": 0.5325,
+          "median_latency_seconds": 7.060293520999991,
+          "parse_valid_rate": 1,
+          "rows": 20,
+          "valid_rows": 20
+        }
+      },
+      "cue_recovery_95ci_given_flip": [
+        0,
+        0.7934506856227626
+      ],
+      "cue_recovery_rate_given_flip": 0,
+      "model": "qwen2.5:3b",
+      "paired_valid_rows": 19,
+      "recovered_count": 0
+    }
+  ],
+  "paired_exact_tests": [
+    {
+      "a_only_correct": 7,
+      "b_only_correct": 0,
+      "comparison": "clean_no_cue_vs_attacked_no_cue",
+      "discordant_pairs": 7,
+      "holm_adjusted_p": 0.078125,
+      "model": "llama3.2:3b",
+      "p_value": 0.015625
+    },
+    {
+      "a_only_correct": 5,
+      "b_only_correct": 0,
+      "comparison": "attacked_with_cue_vs_attacked_no_cue",
+      "discordant_pairs": 5,
+      "holm_adjusted_p": 0.1875,
+      "model": "llama3.2:3b",
+      "p_value": 0.0625
+    },
+    {
+      "a_only_correct": 20,
+      "b_only_correct": 0,
+      "comparison": "clean_no_cue_vs_attacked_no_cue",
+      "discordant_pairs": 20,
+      "holm_adjusted_p": 0.000011444091796875,
+      "model": "phi3:latest",
+      "p_value": 0.0000019073486328125
+    },
+    {
+      "a_only_correct": 6,
+      "b_only_correct": 0,
+      "comparison": "attacked_with_cue_vs_attacked_no_cue",
+      "discordant_pairs": 6,
+      "holm_adjusted_p": 0.125,
+      "model": "phi3:latest",
+      "p_value": 0.03125
+    },
+    {
+      "a_only_correct": 1,
+      "b_only_correct": 0,
+      "comparison": "clean_no_cue_vs_attacked_no_cue",
+      "discordant_pairs": 1,
+      "holm_adjusted_p": 1,
+      "model": "qwen2.5:3b",
+      "p_value": 1
+    },
+    {
+      "a_only_correct": 0,
+      "b_only_correct": 0,
+      "comparison": "attacked_with_cue_vs_attacked_no_cue",
+      "discordant_pairs": 0,
+      "holm_adjusted_p": 1,
+      "model": "qwen2.5:3b",
+      "p_value": 1
+    }
+  ],
+  "protocol": {
+    "conditions": [
+      "clean_no_cue",
+      "attacked_no_cue",
+      "attacked_with_cue"
+    ],
+    "models_evaluated": [
+      "phi3:latest",
+      "qwen2.5:3b",
+      "llama3.2:3b"
+    ],
+    "models_requested": [
+      "phi3:latest",
+      "qwen2.5:3b",
+      "llama3.2:3b"
+    ],
+    "scope": "attack conditioned OTRF scenario set, not population prevalence",
+    "seed": 20261014,
+    "stimulus_count": 20,
+    "temperature": 0,
+    "ollama_version": "0.13.5",
+    "model_ids": {
+      "phi3:latest": "4f2222927938",
+      "qwen2.5:3b": "357c53fb659c",
+      "llama3.2:3b": "a80c4f17acd5"
+    }
+  },
+  "responses_file": "outputs/llm/llm_responses.jsonl",
+  "model_manifest": "manifests/models.json"
+}

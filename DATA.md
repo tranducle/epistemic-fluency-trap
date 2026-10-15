@@ -1,22 +1,39 @@
-# Dataset Provenance and Zero-Leakage Preprocessing (`DATA.md`)
+# Data access
 
-All empirical evaluations in this study are grounded in **four publicly available cybersecurity datasets totaling $2,238,434$ telemetry records ($671,531$ held-out test records) and $1,741$ CVE advisories**. No human-subject data or interview transcripts exist in this repository.
+Raw datasets are not included. Acquire them from the original providers and verify the local files against `manifests/data_manifest.json`.
 
-## 1. Public Datasets Evaluated
+## SALAD-SOC
 
-1. **OTRF Security-Datasets (`N = 43,723` Windows Sysmon/Security Events)**
-   * **Source**: Open Threat Research Forge (`https://github.com/OTRF/Security-Datasets`), 63 `.zip` attack-replay archives under `datasets/atomic/` and `datasets/compound/`.
-   * **Split**: Stratified 70/30 split (`seed = 20261014`): $30,606$ training events, $13,117$ held-out test events ($516$ hostile total, $155$ hostile in test).
-   * **Partitioning**: 5 structural pillars ($\mathcal{A}_{\text{struct}}$: `p1_lineage`, `p2_target_access`, `p3_sig_integ`, `p4_net_port`, `p5_task_reg`); untrusted text channel ($\mathcal{A}_{\text{text}}$: `CommandLine`, `ProcessCommandLine`, `Message`).
+Source repository: `https://github.com/nutthakorn7/SALAD-SOC.git`
 
-2. **SALAD-SOC (`N = 416,781` Enterprise SIEM Alerts)**
-   * **Source**: `salad_test.csv` ($88,570$ malicious, $328,211$ benign alerts across 9 MITRE ATT&CK tactics).
-   * **Split**: Stratified 70/30 split (`seed = 20261014`): $291,746$ training alerts, $125,035$ held-out test alerts ($26,571$ malicious in test).
-   * **Strict Zero-Leakage Protocol**: Excludes all post-triage and SIEM-rule metadata columns (`correlation_key`, `severity`, `confidence`, `priority_score`, `alert_type`, `mitre_tactic`, `mitre_technique`, `kill_chain_phase`, `attack_category`, `triage_decision`). Extracts 5 pure flow/burst structural pillars (`s1_proto_service`, `s2_flow_vol`, `s3_dur_seg`, `s4_burst`, `s5_target_rep`).
+Pinned source commit: `07ede61490b99363bf30d2f36a81da28ec6a4a51`
 
-3. **LMD-2023 (`N = 1,777,930` Windows Sysmon Lateral Movement Records)**
-   * **Source**: `LMD-2023 [1.75M Elements][Labelled]full-csv.csv` ($1,611,637$ Normal, $110,746$ standard Malicious, $55,547$ RedTeam lateral movement).
-   * **Split**: Stratified 70/30 split (`seed = 20261014`): $1,244,551$ training rows, $533,379$ held-out test rows ($49,888$ hostile in test, including $16,664$ RedTeam).
+Expected local paths:
+- `data/salad_soc/salad_train.csv`
+- `data/salad_soc/salad_val.csv`
+- `data/salad_soc/salad_test.csv`
 
-4. **CISA Known Exploited Vulnerabilities (`N = 1,741` CVEs)**
-   * **Source**: `known_exploited_vulnerabilities.json` ($361$ CVEs confirmed in ransomware campaigns).
+The manifest records SHA-256 checksums and byte counts for all three official partitions.
+
+## Lateral Movement Dataset
+
+Source repository: `https://github.com/ChristosSmiliotopoulos/Lateral-Movement-Dataset%2D%2DLMD_Collections.git`
+
+Pinned source commit: `3eb643d7b6c9d2c6ba50933a427fc825cc509336`
+
+Expected local path:
+`data/lmd_2023/full-csv(Evaluated Titles).csv`
+
+Label semantics used by the analysis are 0 Normal, 1 EoRS, and 2 EoHT.
+
+## OTRF Security-Datasets
+
+Source repository: `https://github.com/OTRF/Security-Datasets.git`
+
+Pinned source commit: `d9d40ef123d2c87d5d3df28c96bcab4f0faccc87`
+
+OTRF is used to construct attack-conditioned scenarios. It is not treated as independently labeled population ground truth for classifier accuracy.
+
+## CISA Known Exploited Vulnerabilities
+
+CISA KEV is used as deployment context only. The local checksum is recorded in `manifests/data_manifest.json`.

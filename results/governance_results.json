@@ -1,0 +1,61 @@
+{
+  "assumptions": {
+    "attack_prevalence": [
+      0.001,
+      0.005,
+      0.01,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "benign_gate_burden": "uses the official SALAD PITSA false positive rate",
+    "cost_ratio": [
+      1,
+      5,
+      10,
+      20,
+      50,
+      100,
+      500
+    ],
+    "cue_cost": 1,
+    "gated_attack_outcome": "uses the attacked with cue LLM miss rate",
+    "miss_cost": "swept as a ratio to cue cost",
+    "ungated_attack_outcome": "uses the attacked without cue LLM miss rate"
+  },
+  "break_even_file": "results/governance_break_even.csv",
+  "claim_boundary": "Break-even values are conditional on the evaluated models, stimuli, official SALAD gate rates, attack prevalence scenarios, and normalized costs. They are not universal behavioral laws.",
+  "finite_break_even_range": {
+    "maximum": 481.38188002168124,
+    "minimum": 4.926199132538142
+  },
+  "llm_rates": [
+    {
+      "attack_escalation_rate": 0,
+      "cued_attack_miss_rate": 0.75,
+      "cued_escalation_rate": 0.25,
+      "model": "llama3.2:3b",
+      "unassisted_attack_miss_rate": 1
+    },
+    {
+      "attack_escalation_rate": 0,
+      "cued_attack_miss_rate": 0.7,
+      "cued_escalation_rate": 0.3,
+      "model": "phi3:latest",
+      "unassisted_attack_miss_rate": 1
+    },
+    {
+      "attack_escalation_rate": 0,
+      "cued_attack_miss_rate": 1,
+      "cued_escalation_rate": 0,
+      "model": "qwen2.5:3b",
+      "unassisted_attack_miss_rate": 1
+    }
+  ],
+  "loss_sensitivity_file": "results/governance_loss_sensitivity.csv",
+  "model_scope": "Evidence-linked operational scenario analysis. It combines observed local LLM disposition rates with official-split PITSA gate rates. It does not estimate human behavior.",
+  "pitsa_gate_rates": {
+    "gate_false_positive_rate": 0.0986499538406695,
+    "gate_true_positive_rate": 0.8257649316924467
+  }
+}

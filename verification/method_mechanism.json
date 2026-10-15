@@ -1,0 +1,25 @@
+{
+  "fail_interpretation": "The proposed prompt isolation mechanism is not invariant, discriminative, or supported by a sane baseline pipeline.",
+  "failed_criteria": [],
+  "gate_id": "G3_method_mechanism",
+  "input_artifacts": [
+    "outputs/salad/primary_predictions.npz",
+    "results/salad_metrics_long.csv"
+  ],
+  "metrics": {
+    "PITSA_AUPRC": 0.7880963851419358,
+    "PITSA_balanced_accuracy": 0.8635574889258886,
+    "PITSA_score_unique_values": 1877,
+    "maximum_text_attack_score_difference": 0.0,
+    "test_prevalence": 0.2125096873417934
+  },
+  "next_allowed_step": "ablation_validity",
+  "pass_criteria": {
+    "AUPRC_above_prevalence": true,
+    "G2_pass": true,
+    "balanced_accuracy_above_chance": true,
+    "text_only_score_difference": 0.0
+  },
+  "stage": "method_mechanism",
+  "verdict": "PASS"
+}

@@ -1,0 +1,34 @@
+{
+  "ollama_version": "0.13.5",
+  "models": [
+    {
+      "name": "phi3:latest",
+      "id": "4f2222927938",
+      "architecture": "phi3",
+      "parameters": "3.8B",
+      "context_length": 131072,
+      "quantization": "Q4_0"
+    },
+    {
+      "name": "qwen2.5:3b",
+      "id": "357c53fb659c",
+      "architecture": "qwen2",
+      "parameters": "3.1B",
+      "context_length": 32768,
+      "quantization": "Q4_K_M"
+    },
+    {
+      "name": "llama3.2:3b",
+      "id": "a80c4f17acd5",
+      "architecture": "llama",
+      "parameters": "3.2B",
+      "context_length": 131072,
+      "quantization": "Q4_K_M"
+    }
+  ],
+  "generation": {
+    "temperature": 0,
+    "seed": 20261014,
+    "response_contract": "structured JSON"
+  }
+}

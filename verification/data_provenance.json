@@ -1,0 +1,25 @@
+{
+  "fail_interpretation": "Data provenance is insufficient for official experiments.",
+  "failed_criteria": [],
+  "gate_id": "G0_data_provenance",
+  "input_artifacts": [
+    "verification/salad_data_provenance_detail.json",
+    "verification/lmd_data_provenance_detail.json",
+    "manifests/data_manifest.json"
+  ],
+  "metrics": {
+    "component_verdicts": {
+      "G0_data_provenance_LMD": "PASS",
+      "G0_data_provenance_SALAD": "PASS"
+    }
+  },
+  "next_allowed_step": "preprocessing_integrity",
+  "pass_criteria": {
+    "label_semantics_documented": true,
+    "official_files_parse": true,
+    "required_schema_present": true,
+    "source_metadata_present": true
+  },
+  "stage": "data_provenance",
+  "verdict": "PASS"
+}

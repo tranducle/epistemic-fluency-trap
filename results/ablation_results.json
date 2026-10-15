@@ -1,0 +1,11 @@
+{
+  "elapsed_seconds": 668.4993131160736,
+  "protocol": {
+    "LMD": "core signature disjoint train, validation, and test",
+    "SALAD": "official train, validation, and test",
+    "isolation_rule": "one structural pillar is removed or retained while the split and tuning budget remain fixed",
+    "selection": "alpha and threshold selected on validation for each configuration"
+  },
+  "result_file": "./results/ablation_results.csv",
+  "rows": 20
+}
