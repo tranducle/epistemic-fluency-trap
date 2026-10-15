@@ -16,8 +16,8 @@
     "hostile_events_test": 155,
     "benign_events_test": 12962,
     "tau_llr_operating_point": 4.0,
-    "pitsa_test_inference_ms_total": 27.855,
-    "pitsa_ms_per_event": 0.00212,
+    "pitsa_test_inference_ms_total": 43.484,
+    "pitsa_ms_per_event": 0.00332,
     "models_clean_vs_itpi": {
       "PITSA_Partitioned": {
         "clean": {
@@ -420,6 +420,53 @@
         "hostile_recall": 0.0
       }
     ],
+    "statistical_inference": {
+      "bootstrap_resamples_B": 300,
+      "pitsa_recall_95ci": [
+        0.7613,
+        0.8774
+      ],
+      "pitsa_f1_95ci": [
+        0.3394,
+        0.4021
+      ],
+      "pitsa_auroc_95ci": [
+        0.9656,
+        0.9903
+      ],
+      "mcnemar_itpi_hostile_recall_vs_pitsa": {
+        "NaiveBayes_Unpartitioned": {
+          "pitsa_only_detected_n10": 127,
+          "baseline_only_detected_n01": 0,
+          "mcnemar_chi2": 125.01,
+          "p_value_lt": 0.0001
+        },
+        "LogisticRegression_Unpartitioned": {
+          "pitsa_only_detected_n10": 88,
+          "baseline_only_detected_n01": 0,
+          "mcnemar_chi2": 86.01,
+          "p_value_lt": 0.0001
+        },
+        "RandomForest_Unpartitioned": {
+          "pitsa_only_detected_n10": 127,
+          "baseline_only_detected_n01": 0,
+          "mcnemar_chi2": 125.01,
+          "p_value_lt": 0.0001
+        },
+        "DenseNeuralMLP_Unpartitioned": {
+          "pitsa_only_detected_n10": 127,
+          "baseline_only_detected_n01": 0,
+          "mcnemar_chi2": 125.01,
+          "p_value_lt": 0.0001
+        },
+        "AutoregressiveSubwordLM_Unpartitioned": {
+          "pitsa_only_detected_n10": 127,
+          "baseline_only_detected_n01": 0,
+          "mcnemar_chi2": 125.01,
+          "p_value_lt": 0.0001
+        }
+      }
+    },
     "test_llr_distribution": {
       "hostile_mean_llr": 8.5651,
       "hostile_sd_llr": 4.741,
@@ -437,8 +484,8 @@
     "malicious_alerts_test": 26571,
     "benign_alerts_test": 98464,
     "tau_llr_operating_point": 1.0,
-    "pitsa_test_inference_ms_total": 357.432,
-    "pitsa_ms_per_alert": 0.00286,
+    "pitsa_test_inference_ms_total": 377.659,
+    "pitsa_ms_per_alert": 0.00302,
     "models_clean_vs_itpi": {
       "PITSA_Partitioned": {
         "clean": {
@@ -466,122 +513,122 @@
       },
       "NaiveBayes_Unpartitioned": {
         "clean": {
-          "precision": 1.0,
-          "recall": 1.0,
-          "f1": 1.0,
-          "fpr": 0.0,
-          "auroc": 1.0,
-          "tp": 26571,
-          "fp": 0,
-          "tn": 98464,
-          "fn": 0
+          "precision": 0.7119,
+          "recall": 0.7865,
+          "f1": 0.7473,
+          "fpr": 0.0859,
+          "auroc": 0.9395,
+          "tp": 20897,
+          "fp": 8457,
+          "tn": 90007,
+          "fn": 5674
         },
         "itpi": {
-          "precision": 0.0,
-          "recall": 0.0,
-          "f1": 0.0,
-          "fpr": 0.0,
-          "auroc": 0.1008,
-          "tp": 0,
-          "fp": 0,
-          "tn": 98464,
-          "fn": 26571
+          "precision": 0.48,
+          "recall": 0.2939,
+          "f1": 0.3646,
+          "fpr": 0.0859,
+          "auroc": 0.8453,
+          "tp": 7808,
+          "fp": 8457,
+          "tn": 90007,
+          "fn": 18763
         }
       },
       "LogisticRegression_Unpartitioned": {
         "clean": {
-          "precision": 1.0,
-          "recall": 1.0,
-          "f1": 1.0,
-          "fpr": 0.0,
-          "auroc": 1.0,
-          "tp": 26571,
-          "fp": 0,
-          "tn": 98464,
-          "fn": 0
+          "precision": 0.7824,
+          "recall": 0.8087,
+          "f1": 0.7954,
+          "fpr": 0.0607,
+          "auroc": 0.9653,
+          "tp": 21488,
+          "fp": 5975,
+          "tn": 92489,
+          "fn": 5083
         },
         "itpi": {
-          "precision": 0.0,
-          "recall": 0.0,
-          "f1": 0.0,
-          "fpr": 0.0,
-          "auroc": 0.0916,
-          "tp": 0,
-          "fp": 0,
-          "tn": 98464,
-          "fn": 26571
+          "precision": 0.1149,
+          "recall": 0.0292,
+          "f1": 0.0466,
+          "fpr": 0.0607,
+          "auroc": 0.6643,
+          "tp": 776,
+          "fp": 5975,
+          "tn": 92489,
+          "fn": 25795
         }
       },
       "RandomForest_Unpartitioned": {
         "clean": {
-          "precision": 1.0,
-          "recall": 1.0,
-          "f1": 1.0,
-          "fpr": 0.0,
-          "auroc": 1.0,
-          "tp": 26571,
-          "fp": 0,
-          "tn": 98464,
-          "fn": 0
+          "precision": 0.7824,
+          "recall": 0.8437,
+          "f1": 0.8119,
+          "fpr": 0.0633,
+          "auroc": 0.969,
+          "tp": 22419,
+          "fp": 6236,
+          "tn": 92228,
+          "fn": 4152
         },
         "itpi": {
-          "precision": 0.0,
-          "recall": 0.0,
-          "f1": 0.0,
-          "fpr": 0.0,
-          "auroc": 0.5001,
-          "tp": 0,
-          "fp": 0,
-          "tn": 98464,
-          "fn": 26571
+          "precision": 0.6057,
+          "recall": 0.3605,
+          "f1": 0.452,
+          "fpr": 0.0633,
+          "auroc": 0.9278,
+          "tp": 9578,
+          "fp": 6236,
+          "tn": 92228,
+          "fn": 16993
         }
       },
       "DenseNeuralMLP_Unpartitioned": {
         "clean": {
-          "precision": 1.0,
-          "recall": 1.0,
-          "f1": 1.0,
-          "fpr": 0.0,
-          "auroc": 1.0,
-          "tp": 26571,
-          "fp": 0,
-          "tn": 98464,
-          "fn": 0
+          "precision": 0.7738,
+          "recall": 0.8493,
+          "f1": 0.8098,
+          "fpr": 0.067,
+          "auroc": 0.9686,
+          "tp": 22566,
+          "fp": 6595,
+          "tn": 91869,
+          "fn": 4005
         },
         "itpi": {
-          "precision": 0.0,
-          "recall": 0.0,
-          "f1": 0.0,
-          "fpr": 0.0,
-          "auroc": 0.0535,
-          "tp": 0,
-          "fp": 0,
-          "tn": 98464,
-          "fn": 26571
+          "precision": 0.5259,
+          "recall": 0.2753,
+          "f1": 0.3614,
+          "fpr": 0.067,
+          "auroc": 0.8784,
+          "tp": 7316,
+          "fp": 6595,
+          "tn": 91869,
+          "fn": 19255
         }
       },
       "AutoregressiveSubwordLM_Unpartitioned": {
         "clean": {
-          "precision": 1.0,
-          "recall": 1.0,
-          "f1": 1.0,
-          "fpr": 0.0,
-          "auroc": 1.0,
-          "tp": 26571,
-          "fp": 0,
-          "tn": 98464,
-          "fn": 0
+          "precision": 0.7911,
+          "recall": 0.7746,
+          "f1": 0.7828,
+          "fpr": 0.0552,
+          "auroc": 0.9581,
+          "tp": 20583,
+          "fp": 5435,
+          "tn": 93029,
+          "fn": 5988
         },
         "itpi": {
-          "precision": 0.0,
-          "recall": 0.0,
-          "f1": 0.0,
-          "fpr": 0.0,
-          "auroc": 0.0,
-          "tp": 0,
-          "fp": 0,
-          "tn": 98464,
-          "fn": 26571
+          "precision": 0.1647,
+          "recall": 0.0403,
+          "f1": 0.0648,
+          "fpr": 0.0552,
+          "auroc": 0.7869,
+          "tp": 1072,
+          "fp": 5435,
+          "tn": 93029,
+          "fn": 25499
         }
       }
     },
@@ -589,47 +636,47 @@
       {
         "appended_benign_clauses_m": 0,
         "PITSA_recall": 0.6868,
-        "NaiveBayes_recall": 1.0,
-        "LogisticRegression_recall": 1.0,
-        "RandomForest_recall": 1.0,
-        "DenseNeuralMLP_recall": 1.0,
-        "AutoregressiveSubwordLM_recall": 1.0
+        "NaiveBayes_recall": 0.7865,
+        "LogisticRegression_recall": 0.8087,
+        "RandomForest_recall": 0.8437,
+        "DenseNeuralMLP_recall": 0.8493,
+        "AutoregressiveSubwordLM_recall": 0.7746
       },
       {
         "appended_benign_clauses_m": 1,
         "PITSA_recall": 0.6868,
-        "NaiveBayes_recall": 0.8633,
-        "LogisticRegression_recall": 0.0,
-        "RandomForest_recall": 0.0,
-        "DenseNeuralMLP_recall": 0.0,
-        "AutoregressiveSubwordLM_recall": 0.0
+        "NaiveBayes_recall": 0.4485,
+        "LogisticRegression_recall": 0.2036,
+        "RandomForest_recall": 0.3559,
+        "DenseNeuralMLP_recall": 0.7743,
+        "AutoregressiveSubwordLM_recall": 0.1072
       },
       {
         "appended_benign_clauses_m": 2,
         "PITSA_recall": 0.6868,
-        "NaiveBayes_recall": 0.0,
-        "LogisticRegression_recall": 0.0,
-        "RandomForest_recall": 0.0,
-        "DenseNeuralMLP_recall": 0.0,
-        "AutoregressiveSubwordLM_recall": 0.0
+        "NaiveBayes_recall": 0.358,
+        "LogisticRegression_recall": 0.1204,
+        "RandomForest_recall": 0.1849,
+        "DenseNeuralMLP_recall": 0.6023,
+        "AutoregressiveSubwordLM_recall": 0.0355
       },
       {
         "appended_benign_clauses_m": 4,
         "PITSA_recall": 0.6868,
-        "NaiveBayes_recall": 0.0,
-        "LogisticRegression_recall": 0.0,
-        "RandomForest_recall": 0.0,
-        "DenseNeuralMLP_recall": 0.0,
-        "AutoregressiveSubwordLM_recall": 0.0
+        "NaiveBayes_recall": 0.3297,
+        "LogisticRegression_recall": 0.0299,
+        "RandomForest_recall": 0.2149,
+        "DenseNeuralMLP_recall": 0.2996,
+        "AutoregressiveSubwordLM_recall": 0.0315
       },
       {
         "appended_benign_clauses_m": 8,
         "PITSA_recall": 0.6868,
-        "NaiveBayes_recall": 0.0,
-        "LogisticRegression_recall": 0.0,
-        "RandomForest_recall": 0.0,
-        "DenseNeuralMLP_recall": 0.0,
-        "AutoregressiveSubwordLM_recall": 0.0
+        "NaiveBayes_recall": 0.2565,
+        "LogisticRegression_recall": 0.0077,
+        "RandomForest_recall": 0.2753,
+        "DenseNeuralMLP_recall": 0.2514,
+        "AutoregressiveSubwordLM_recall": 0.03
       }
     ],
     "by_difficulty_level": {
@@ -694,6 +741,11 @@
         "count": 7,
         "pitsa_recall": 1.0,
         "mean_llr": 3.2845
+      },
+      "Initial Access & Lateral Movement": {
+        "count": 97,
+        "pitsa_recall": 0.0928,
+        "mean_llr": 0.2971
       }
     },
     "feature_group_ablations": {
@@ -764,6 +816,53 @@
         "fn": 8321
       }
     },
+    "statistical_inference": {
+      "bootstrap_resamples_B": 300,
+      "pitsa_recall_95ci": [
+        0.6815,
+        0.6924
+      ],
+      "pitsa_f1_95ci": [
+        0.7015,
+        0.7097
+      ],
+      "pitsa_auroc_95ci": [
+        0.9324,
+        0.9401
+      ],
+      "mcnemar_itpi_hostile_recall_vs_pitsa": {
+        "NaiveBayes_Unpartitioned": {
+          "pitsa_only_detected_n10": 10461,
+          "baseline_only_detected_n01": 19,
+          "mcnemar_chi2": 10402.15,
+          "p_value_lt": 0.0001
+        },
+        "LogisticRegression_Unpartitioned": {
+          "pitsa_only_detected_n10": 17474,
+          "baseline_only_detected_n01": 0,
+          "mcnemar_chi2": 17472.0,
+          "p_value_lt": 0.0001
+        },
+        "RandomForest_Unpartitioned": {
+          "pitsa_only_detected_n10": 8832,
+          "baseline_only_detected_n01": 160,
+          "mcnemar_chi2": 8361.46,
+          "p_value_lt": 0.0001
+        },
+        "DenseNeuralMLP_Unpartitioned": {
+          "pitsa_only_detected_n10": 11097,
+          "baseline_only_detected_n01": 163,
+          "mcnemar_chi2": 10615.5,
+          "p_value_lt": 0.0001
+        },
+        "AutoregressiveSubwordLM_Unpartitioned": {
+          "pitsa_only_detected_n10": 17178,
+          "baseline_only_detected_n01": 0,
+          "mcnemar_chi2": 17176.0,
+          "p_value_lt": 0.0001
+        }
+      }
+    },
     "test_llr_distribution": {
       "hostile_mean_llr": 2.1827,
       "hostile_sd_llr": 2.3644,
@@ -782,8 +881,8 @@
       "RedTeam_2": 55547
     },
     "tau_llr_operating_point": 0.5,
-    "pitsa_test_inference_ms_total": 1972.564,
-    "pitsa_us_per_event": 3.6982,
+    "pitsa_test_inference_ms_total": 2299.934,
+    "pitsa_us_per_event": 4.312,
     "primary_metrics_at_tau_0_5": {
       "precision": 0.6879,
       "recall": 0.9993,
@@ -937,6 +1036,22 @@
         "fn": 145,
         "redteam_recall": 0.9991
       }
+    },
+    "statistical_inference": {
+      "bootstrap_resamples_B": 1000,
+      "pitsa_recall_95ci": [
+        0.9991,
+        0.9995
+      ],
+      "pitsa_f1_95ci": [
+        0.8131,
+        0.8168
+      ],
+      "pitsa_auroc_95ci": [
+        0.9961,
+        0.9969
+      ],
+      "mcnemar_itpi_hostile_recall_vs_pitsa": {}
     },
     "test_llr_distribution": {
       "hostile_mean_llr": 15.878,
