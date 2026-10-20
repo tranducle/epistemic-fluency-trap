@@ -24,6 +24,10 @@ Actual instruction-model responses and conditioned scenarios are under `outputs/
 
 The records under `verification/` document provenance, split integrity, baseline sanity, method mechanism, ablations, robustness, and result integrity.
 
+## Reading the verification records
+
+Each `input_artifacts` field records paths from the full experiment workspace at the time the check ran. Raw datasets, row-level CSV files, and prediction arrays are not part of this public tree. A `PASS` value reports the result of the recorded experiment check. It does not mean that every generation-time input is included in the current checkout.
+
 ## Full raw-data execution
 
 After acquiring the source datasets described in `DATA.md`, place them under `data/` and run the required stage:

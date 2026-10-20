@@ -47,5 +47,5 @@
   "llm_temperature": 0.0,
   "llm_seed": 20261014,
   "llm_stimulus_target": 20,
-  "claim_policy": "Only results that pass the relevant scientific gate may enter the manuscript."
+  "claim_policy": "Report only results that pass the relevant scientific gate."
 }
